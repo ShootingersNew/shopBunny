@@ -5,7 +5,7 @@ import Logo from "../../atoms/logo";
 import TopNav from "../../atoms/topNav";
 import ContactNav from "../../molecules/contactNav";
 //styles
-import './header.css'
+import './style.css'
 
 
 const Header: React.FC = () => {
