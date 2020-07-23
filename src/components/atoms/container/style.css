@@ -1,0 +1,7 @@
+@import '../../_settings/_variables.css';
+
+.container {
+    margin: auto;
+    width: 100%;
+    max-width: var(--width-container);
+}

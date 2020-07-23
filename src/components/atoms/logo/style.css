@@ -1,0 +1,17 @@
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__img-container {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: #C4C4C4;
+}
+
+.logo__text {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 21px;
+}

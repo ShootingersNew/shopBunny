@@ -1,0 +1,13 @@
+.topNav__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.topNav__list-item {
+    display: inline-block;
+}
+
+.topNav__list-item:not(:last-child) {
+    margin-right: 38px;
+}
