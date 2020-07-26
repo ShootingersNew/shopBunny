@@ -1,0 +1,11 @@
+.scrollLink {
+    color: var(--brand-spare);
+}
+
+@supports (-webkit-background-clip: text) and (-webkit-text-fill-color:transparent) {
+    .scrollLink {
+        background: var(--brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
