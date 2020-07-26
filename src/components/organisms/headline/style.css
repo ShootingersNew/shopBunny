@@ -1,0 +1,11 @@
+.headline__header {
+    width: 600px;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.headline {
+    height: 784px;
+    padding-top: 57px;
+    box-sizing: border-box;
+}
