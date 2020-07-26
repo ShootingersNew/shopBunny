@@ -5,6 +5,7 @@
     * Colors
     */
     --brand: linear-gradient(98.36deg, #EC1FB3 9.5%, #FBC60B 131.48%);
+    --brand-spare: #EC1FB3;
     --background-color: white;
     --text: #000000;
     --grey-1: #8C8C8C;
