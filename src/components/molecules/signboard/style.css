@@ -1,0 +1,13 @@
+.signboard {
+    width: 388px;
+    height: 280px;
+    padding: 46px 0 33px 62px;
+    box-sizing: border-box;
+    line-height: 205%;
+    background-color: var(--background-color);
+}
+
+.signboard__link {
+    margin-top: 9px;
+    display: inline-block;
+}
