@@ -1,5 +1,6 @@
 .scrollLink {
     color: var(--brand-spare);
+    cursor: pointer;
 }
 
 @supports (-webkit-background-clip: text) and (-webkit-text-fill-color:transparent) {
