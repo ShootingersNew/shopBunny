@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 //comps
 import Container from "../../atoms/container";
 import Logo from "../../atoms/logo";

@@ -1,7 +1,9 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React from "react"
+import {Link} from "react-router-dom"
+//styles
 import cn from 'classnames'
 
+//types
 interface ButtonPropTypes {
     ePrevent?: boolean,
     onClick?: (e: React.MouseEvent) => void,

@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 //styles
 import cn from '../montserratBlack/style.module.css'
 import './style.css'
-
+//types
 type LogoPropTypes = {
     text: string,
     img: any

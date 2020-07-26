@@ -1,8 +1,9 @@
 import React from "react"
+//comps
 import List from "../../atoms/list"
-import './style.css'
-
 import ScrollLink from "../scrollLink"
+//styles
+import './style.css'
 
 const Signboard: React.FC<{ linkTo: number | undefined }> = ({linkTo}) => {
     return (

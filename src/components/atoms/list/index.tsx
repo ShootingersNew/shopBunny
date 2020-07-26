@@ -1,7 +1,8 @@
 import React from "react"
+//styles
 import cn from 'classnames'
 import './style.css'
-
+//types
 type ListPropTypes = {
     list: ListObjKeys[] | string[],
     listClassName?: string,
@@ -11,6 +12,7 @@ type ListObjKeys = {
     link?: string,
     title: string,
 }
+
 const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName}) => {
     let listClassNames = cn({
         list: true,

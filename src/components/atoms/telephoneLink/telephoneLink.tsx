@@ -1,6 +1,7 @@
-import React from "react";
+import React from "react"
+//styles
 import cn from 'classnames'
-
+//types
 type TelephoneLink = {
     className?: string,
     children: string,

@@ -1,8 +1,8 @@
-import React from "react";
-import cn from "classnames";
+import React from "react"
+import cn from "classnames"
 //styles
 import './style.css'
-
+//types
 type ContainerPropTypes = {
     className?: string
 }

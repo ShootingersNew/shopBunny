@@ -1,8 +1,10 @@
-import React from "react";
-import List from "../../atoms/list";
+import React from "react"
+//comps
+import List from "../../atoms/list"
+//styles
 import cn from 'classnames'
 import './style.css'
-
+// types
 type TopNavPropTypes = {
     className?: string,
     navArr: Array<navArrTypes>

@@ -1,8 +1,9 @@
 import React from "react";
+//styles
 import cn from 'classnames'
 import './style.css'
 import f from './../montserratBlack/style.module.css'
-
+//types
 type HeadingPropTypes = {
     type: number,
     className?: string

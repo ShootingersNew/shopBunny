@@ -1,8 +1,10 @@
-import React from "react";
-import Heading from "../../atoms/heading";
+import React from "react"
+//comps
+import Heading from "../../atoms/heading"
+import Signboard from "../../molecules/signboard"
+import Container from "../../atoms/container"
+//styles
 import './style.css'
-import Signboard from "../../molecules/signboard";
-import Container from "../../atoms/container";
 
 const Headline: React.FC<{ linkTo: number | undefined, img: string }> = ({linkTo, img}) => {
     return (

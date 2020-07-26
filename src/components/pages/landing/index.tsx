@@ -1,9 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
-import Index from "../../templates/landingTemplate";
-import Header from "../../organisms/header";
-import Headline from "../../organisms/headline";
+import React, {useEffect, useRef, useState} from "react"
+//comps
+import Index from "../../templates/landingTemplate"
+import Header from "../../organisms/header"
+import Headline from "../../organisms/headline"
+//styles
 import back from './img/back.jpg'
-
+//types
 type ScrollRefsTypes = {
     projects: number | undefined
 };
