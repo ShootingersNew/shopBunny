@@ -1,9 +1,10 @@
 import React from "react";
+import ScrollLink from "../scrollLink";
 import TelephoneLink from "../../atoms/telephoneLink/telephoneLink";
 import './style.css'
 import st from './../../atoms/montserratBold/style.module.css'
 
-const ContactNav: React.FC<{ telephone: string }> = ({telephone}) => {
+const ContactNav: React.FC<{ telephone: string, scrollTo: number | undefined }> = ({telephone, scrollTo}) => {
     return (
         <div className={`header__contact-us contactNav ${st.montserratBold}`}>
             <TelephoneLink className={'contactNav__link'}>
@@ -11,7 +12,7 @@ const ContactNav: React.FC<{ telephone: string }> = ({telephone}) => {
                     telephone
                 }
             </TelephoneLink>
-            <a href="" className={`contactNav__to-form`}>Обсудить проект</a>
+            <ScrollLink to={scrollTo}>Обсудить проект</ScrollLink>
         </div>
     )
 };

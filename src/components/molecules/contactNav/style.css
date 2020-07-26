@@ -1,14 +1,4 @@
-.contactNav__to-form {
-    color: #EC1FB3;
-}
-
-@supports (-webkit-background-clip: text) and (-webkit-text-fill-color:transparent) {
-    .contactNav__to-form {
-        background: var(--brand);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
+@import "./../../_settings/_variables.css";
 
 .contactNav__link {
     margin-right: 38px;
