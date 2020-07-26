@@ -1,8 +1,8 @@
 import React from "react"
 //comps
-import Heading from "../../atoms/heading"
-import Signboard from "../../molecules/signboard"
-import Container from "../../atoms/container"
+import Heading from "../../atoms/Heading"
+import Signboard from "../../molecules/Signboard"
+import Container from "../../atoms/Container"
 //styles
 import './style.css'
 

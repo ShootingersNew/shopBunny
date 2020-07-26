@@ -1,6 +1,6 @@
 import React from "react"
 //comps
-import List from "../../atoms/list"
+import List from "../../atoms/List"
 //styles
 import cn from 'classnames'
 import './style.css'

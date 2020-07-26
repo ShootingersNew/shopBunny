@@ -1,7 +1,7 @@
 import React from "react"
 //comps
-import ScrollLink from "../scrollLink"
-import TelephoneLink from "../../atoms/telephoneLink/telephoneLink"
+import ScrollLink from "../ScrollLink"
+import TelephoneLink from "../../atoms/TelephoneLink"
 //styles
 import './style.css'
 import st from './../../atoms/montserratBold/style.module.css'

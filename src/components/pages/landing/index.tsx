@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from "react"
 //comps
-import Index from "../../templates/landingTemplate"
-import Header from "../../organisms/header"
-import Headline from "../../organisms/headline"
+import Index from "../../templates/LandingTemplate"
+import Header from "../../organisms/Header"
+import Headline from "../../organisms/Headline"
 //styles
 import back from './img/back.jpg'
 //types

@@ -1,7 +1,7 @@
 import React from "react"
 //comps
-import List from "../../atoms/list"
-import ScrollLink from "../scrollLink"
+import List from "../../atoms/List"
+import ScrollLink from "../ScrollLink"
 //styles
 import './style.css'
 

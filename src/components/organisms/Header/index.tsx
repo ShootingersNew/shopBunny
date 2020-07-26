@@ -1,9 +1,9 @@
 import React from "react"
 //comps
-import Container from "../../atoms/container";
-import Logo from "../../atoms/logo";
-import TopNav from "../../molecules/topNav";
-import ContactNav from "../../molecules/contactNav";
+import Container from "../../atoms/Container";
+import Logo from "../../atoms/Logo";
+import TopNav from "../../molecules/TopNav";
+import ContactNav from "../../molecules/ContactNav";
 //styles
 import './style.css'
 
