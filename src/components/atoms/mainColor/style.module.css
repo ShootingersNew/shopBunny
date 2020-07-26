@@ -1,0 +1,11 @@
+.mainColor {
+    color: var(--brand-spare);
+}
+
+@supports (-webkit-background-clip: text) and (-webkit-text-fill-color:transparent) {
+    .mainColor {
+        background: var(--brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
