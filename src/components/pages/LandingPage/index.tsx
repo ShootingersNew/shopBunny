@@ -10,7 +10,7 @@ type ScrollRefsTypes = {
     projects: number | undefined
 };
 
-const Landing = () => {
+const LandingPage = () => {
     //initialize state for store offsetTop of scroll-wrappers
     const [scrollRefs, setScrollRefs] = useState<ScrollRefsTypes>({projects: undefined});
     const projectsRef = useRef<HTMLDivElement>(null);
@@ -35,4 +35,4 @@ const Landing = () => {
     )
 
 };
-export default Landing
+export default LandingPage
