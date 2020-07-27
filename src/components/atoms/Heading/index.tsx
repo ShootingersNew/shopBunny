@@ -11,8 +11,10 @@ type HeadingPropTypes = {
 
 const Heading: React.FC<HeadingPropTypes> = ({type, className, children}) => {
     let headingClassname = cn({
-        [`heading_${type} ${f.fontMontserratBlack}`]: true,
+        [`heading heading_${type}`]: true,
         [`${className}`]: className,
+        [`${f.fontMontserratBlack}`]: type !== 4
+
     });
     let h;
     switch (type) {

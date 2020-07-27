@@ -1,5 +1,24 @@
+@import "../../_settings/_variables.css";
+
 .heading_1 {
-    font-size: 100px;
-    margin: 0;
+    font-size: var(--header-1-size);
     line-height: 106%;
+}
+
+.heading_2 {
+    font-size: var(--header-2-size);
+    line-height: 115%;
+}
+
+.heading_3 {
+    font-size: var(--header-3-size);
+}
+
+.heading_4 {
+
+}
+
+.heading {
+    display: inline-block;
+    margin: 0;
 }

@@ -25,8 +25,11 @@
     --base-font-family: Arial, sans-serif;
     --headers-font-family: serif;
     --base-font-size: 21px;
-    --header-2-size: 3, 4285rem;
-    --header-3-size: 1, 1904rem;
+    --small-font-size: 18px;
+    --header-1-size: 4.76em;
+    --header-2-size: 3.4285em;
+    --header-3-size: 1.1904em;
+
 
     /*
     container

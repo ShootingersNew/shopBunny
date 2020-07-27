@@ -1,0 +1,10 @@
+.columnsWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.columnsWrapper_showcase {
+    margin: -25px -12px;
+    padding: 25px 0;
+}

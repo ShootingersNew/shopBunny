@@ -1,0 +1,27 @@
+@import "../../_settings/_variables.css";
+
+.cardProduct {
+    width: 568px;
+    height: 376px;
+    margin: 25px 12px;
+    line-height: 35px;
+}
+
+.cardProduct__header {
+    margin-top: 11px;
+}
+
+.cardProduct__image {
+    height: 295px;
+    width: 568px;
+    background: var(--brand);
+}
+
+.cardProduct__type {
+    color: var(--grey-1);
+    margin-left: 24px;
+}
+
+.cardProduct__tag {
+    margin-right: 47px;
+}

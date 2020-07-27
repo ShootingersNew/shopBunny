@@ -1,0 +1,13 @@
+.projects__filters {
+    width: 916px;
+    display: inline-block;
+}
+
+.projects__header {
+    padding-top: 57px;
+    padding-bottom: 48px;
+}
+
+.projects {
+    padding-bottom: 25px;
+}

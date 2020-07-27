@@ -1,3 +1,4 @@
+@import "../../_settings/_variables.css";
 .mainColor {
     color: var(--brand-spare);
 }

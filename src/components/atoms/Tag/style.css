@@ -1,0 +1,7 @@
+@import "../../_settings/_variables.css";
+
+.tag {
+    color: #C4C4C4;
+    display: inline-block;
+    cursor: pointer;
+}

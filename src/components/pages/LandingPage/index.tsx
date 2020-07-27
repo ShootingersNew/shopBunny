@@ -3,6 +3,7 @@ import React, {useEffect, useRef, useState} from "react"
 import Index from "../../templates/LandingTemplate"
 import Header from "../../organisms/Header"
 import Headline from "../../organisms/Headline"
+import Projects from "../../organisms/Projects";
 //styles
 import back from './img/back.jpg'
 //types
@@ -27,6 +28,7 @@ const LandingPage = () => {
             headline={
                 <Headline img={back} linkTo={scrollRefs.projects}/>
             }
+            projects={<Projects/>}
         >
             <div ref={projectsRef} id="anchor" className="element">
                 test 6 (anchor)
