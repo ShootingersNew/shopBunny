@@ -1,0 +1,48 @@
+@import "../../_settings/_variables.css";
+
+.cardPrice {
+    width: 551px;
+    height: 941px;
+}
+
+.cardPrice:not(:nth-last-child(-n+3)) {
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.cardPrice__image {
+    width: 551px;
+    height: 313px;
+}
+
+.cardPrice__strong {
+    line-height: 165%;
+}
+
+.cardPrice__definition {
+    color: var(--grey-1);
+}
+
+.cardPrice__listHeader {
+    color: black;
+}
+
+.cardPrice__list {
+    color: var(--grey-1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cardPrice__header {
+    margin-top: 23px;
+    margin-bottom: 22px;
+    white-space: pre-line;
+    display: block;
+}
+
+.cardPrice__subtitle {
+    white-space: pre-line;
+}
+
+.cardPrice__definition {
+    white-space: pre-line;
+}
