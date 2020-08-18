@@ -8,3 +8,23 @@
     margin: -25px -12px;
     padding: 25px 0;
 }
+
+.columnsWrapper_showcase .card {
+    margin: 25px 12px;
+}
+
+.columnsWrapper_staff {
+    margin: 0 -10px;
+}
+
+.columnsWrapper_staff .card {
+    margin: 0 10px;
+}
+
+.columnsWrapper_price {
+    margin: -10px -15px;
+}
+
+.columnsWrapper_price .card {
+    margin: 15px 15px;
+}

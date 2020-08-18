@@ -1,12 +1,12 @@
 import React from "react";
 import cn from 'classnames'
-import {ProductArrayType} from "../../../tsTypes";
+import {PriceArrayType, ProductArrayType, StaffArrayType} from "../../../tsTypes";
 import './style.css'
 
 type ColumnsWrapperTypes = {
-    items: ProductArrayType[],
-    card: (item: ProductArrayType) => JSX.Element,
-    type: 'showcase' | 'info'
+    items: (ProductArrayType | StaffArrayType | PriceArrayType) [],
+    card: (item: ProductArrayType | StaffArrayType | PriceArrayType) => JSX.Element,
+    type: 'showcase' | 'info' | 'staff' | 'price'
 }
 const ColumnsWrapper: React.FC<ColumnsWrapperTypes> = ({items, card, type}) => {
     const classNames = cn(
