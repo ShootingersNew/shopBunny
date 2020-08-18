@@ -6,14 +6,15 @@ import './style.css'
 type ListPropTypes = {
     list: ListObjKeys[] | string[],
     listClassName?: string,
-    listItemClassName?: string
+    listItemClassName?: string,
+    type?: 'bullets'
 };
 type ListObjKeys = {
     link?: string,
     title: string,
 }
 
-const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName}) => {
+const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName, type}) => {
     let listClassNames = cn({
         list: true,
         [`${listClassName}`]: listClassName
@@ -35,7 +36,12 @@ const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName})
             )
         } else {
             return (
-                <li className={listItemClassNames}>{item}</li>
+                <li className={listItemClassNames}>
+                    {
+                        type === 'bullets' && <span className={'list__bullets'}>+ </span>
+                    }
+                    {item}
+                </li>
 
             )
         }
