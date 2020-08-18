@@ -1,6 +1,4 @@
 import React from "react"
-// import Heading from "../../atoms/Heading"
-// import Container from "../../atoms/Container"
 import './style.css'
 import Subheader from "../../molecules/Subheader"
 import ColumnsWrapper from "../../molecules/ColumnsWrapper"
@@ -75,9 +73,17 @@ type ProjectPropTypes = {
 const Projects: React.FC<ProjectPropTypes> = ({isWithContent}) => {
     return (
         <section className={'projects'}>
-            <Subheader className={'projects__header'}
-                       content={<Filters className={'projects__filters'} arr={tagsArray}/>}>Проекты</Subheader>
-            <ColumnsWrapper type={"showcase"} items={array} card={(item) => <CardProduct item={item}/>}/>
+            <Subheader
+                className={'projects__header'}
+                content={<Filters className={'projects__filters'} arr={tagsArray}/>}
+            >
+                Проекты
+            </Subheader>
+            <ColumnsWrapper
+                type={"showcase"}
+                items={array}
+                card={(item) => <CardProduct item={item as ProductArrayType}/>}
+            />
         </section>
     )
 };
