@@ -13,7 +13,7 @@ const Heading: React.FC<HeadingPropTypes> = ({type, className, children}) => {
     let headingClassname = cn({
         [`heading heading_${type}`]: true,
         [`${className}`]: className,
-        [`${f.fontMontserratBlack}`]: type !== 4
+        [`${f.fontMontserratBlack}`]: type !== 4 && type !== 3
 
     });
     let h;

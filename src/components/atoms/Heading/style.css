@@ -12,6 +12,8 @@
 
 .heading_3 {
     font-size: var(--header-3-size);
+    font-weight: normal;
+    line-height: 115%;
 }
 
 .heading_4 {
