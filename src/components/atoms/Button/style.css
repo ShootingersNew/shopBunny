@@ -1,0 +1,28 @@
+@import "../../_settings/_variables.css";
+
+.button {
+    cursor: pointer;
+}
+
+.button_isValid_false {
+    color: var(--grey-1);
+    border: 1px solid var(--grey-3);
+    background: white;
+    cursor: initial;
+}
+
+.button_isValid_true {
+    border: none;
+    color: white;
+    background: var(--brand);
+}
+
+.button_accent {
+    border: 1px solid inherit;
+    color: white;
+    background: var(--brand);
+}
+
+.button {
+    font-family: inherit;
+}

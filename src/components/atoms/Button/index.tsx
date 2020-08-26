@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 //styles
 import cn from 'classnames'
+import './style.css'
 
 //types
 interface ButtonPropTypes {
@@ -26,19 +27,19 @@ const Button: React.ForwardRefExoticComponent<ButtonPropTypes> = React.forwardRe
         }
 
         const btnClassname = cn({
-            'button fonts__proximaNovaBold': true,
+            'button': true,
             [`button_${mod}`]: mod,
             [`${className}`]: className
         });
         let button;
         switch (type) {
             case 'link':
-                button = <Link to={`${link}`} className={btnClassname + 'button_type_link'}> {children} </Link>;
+                button = <Link to={`${link}`} className={btnClassname + ' button_type_link'}> {children} </Link>;
                 break;
             case 'input' :
                 button = <input
                     type={'submit'}
-                    className={btnClassname + 'button_type_input'}
+                    className={btnClassname + ' button_type_input'}
                     disabled={disabled}
                     value={children}
                 />;
@@ -47,7 +48,7 @@ const Button: React.ForwardRefExoticComponent<ButtonPropTypes> = React.forwardRe
                 button =
                     <button
 
-                        className={btnClassname + 'button_type_default'}
+                        className={btnClassname + ' button_type_default '}
                         onClick={clickHandler}
                         disabled={disabled ? disabled : false}
                     >
