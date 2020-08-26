@@ -9,11 +9,12 @@ const StaffCard: React.FC<StaffArrayType> = () => {
         <Card
             className={'staffCard'}
             preview={<div className={'staffCard__img'}/>}
+
             content={
-                <React.Fragment>
+                <div className="staffCard staffCard__content">
                     <Heading className={'staffCard__header'} type={3}>Алина Красильникова</Heading>
                     <div className="staffCard__post">Арт-директор</div>
-                </React.Fragment>
+                </div>
             }
         />
     )
