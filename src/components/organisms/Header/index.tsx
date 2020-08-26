@@ -2,7 +2,7 @@ import React from "react"
 //comps
 import Container from "../../atoms/Container";
 import Logo from "../../atoms/Logo";
-import TopNav from "../../molecules/TopNav";
+import Nav from "../../molecules/Nav";
 import ContactNav from "../../molecules/ContactNav";
 //styles
 import './style.css'
@@ -16,7 +16,8 @@ const Header: React.FC<{ scrollTo: number | undefined }> = ({scrollTo}) => {
                     text={'Bunny studio'}
                     img={''}
                 />
-                <TopNav
+                <Nav
+                    className={'header__nav'}
                     navArr={
                         [
                             {

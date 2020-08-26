@@ -1,8 +1,11 @@
 import React from "react";
-import ColumnsWrapper from "../../molecules/ColumnsWrapper";
-import Subheader from "../../molecules/Subheader";
-import CardPrice from "../../molecules/CardPrice";
-import {PriceArrayType} from "../../../tsTypes";
+import ColumnsWrapper from "../../molecules/ColumnsWrapper"
+import Subheader from "../../molecules/Subheader"
+import CardPrice from "../../molecules/CardPrice"
+//styles
+import './style.css'
+
+import {PriceArrayType} from "../../../tsTypes"
 
 const content: PriceArrayType[] = [
     {
@@ -76,7 +79,8 @@ const PriceList: React.FC<{ scrollTo: number | undefined }> = ({scrollTo}) => {
             <ColumnsWrapper
                 items={content}
                 type={'price'}
-                card={(item) => (<CardPrice scrollTo={scrollTo} {...item as PriceArrayType}/>)}
+                card={(item) => (
+                    <CardPrice className={'priceList__card'} scrollTo={scrollTo} {...item as PriceArrayType}/>)}
             />
         </section>
     )
