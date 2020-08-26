@@ -1,3 +1,4 @@
+@import "../../_settings/_variables.css";
 .scrollLink {
     color: var(--brand-spare);
     cursor: pointer;
