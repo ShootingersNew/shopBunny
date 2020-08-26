@@ -2,7 +2,9 @@
 
 .cardPrice {
     width: 551px;
-    height: 941px;
+    height: auto;
+    padding: 0 0 21px;
+    white-space: pre-line;
 }
 
 .cardPrice:not(:nth-last-child(-n+3)) {

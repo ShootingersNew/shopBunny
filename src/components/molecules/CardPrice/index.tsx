@@ -8,20 +8,20 @@ import ScrollLink from "../ScrollLink";
 import './style.css'
 
 interface CardPriceTypes extends PriceArrayType {
-    scrollTo: number | undefined
+    scrollTo: number | undefined,
+    className: string
 }
 
-const CardPrice: React.FC<CardPriceTypes> = ({title, subTitle, type, list, scrollTo}) => {
+const CardPrice: React.FC<CardPriceTypes> = ({title, subTitle, className, type, list, scrollTo}) => {
     return (
         <Card
             className={'cardPrice'}
             preview={<img src={process.env.REACT_APP_IMAGES_PATH + '/image.png'} alt=""/>}
             content={
-                <React.Fragment>
+                <div className="cardPrice__content">
                     <Heading className={'cardPrice__header'} type={3}>{title}</Heading>
                     <strong className={'cardPrice__subtitle ' + font.montserratBold}>
-                        {/*Дизайн от 30 000р / от 25 дней. <br/> С версткой "под ключ" +*/}
-                        {/*от 25 000р*/}
+
                         {
                             typeof subTitle === 'object' ?
                                 (subTitle as []).map((string) => (
@@ -40,7 +40,7 @@ const CardPrice: React.FC<CardPriceTypes> = ({title, subTitle, type, list, scrol
                         />
                     </div>
                     <ScrollLink to={scrollTo}>Смотреть портфолио ></ScrollLink>
-                </React.Fragment>
+                </div>
             }
         >
 
