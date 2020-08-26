@@ -13,7 +13,7 @@ const CardProduct: React.FC<{ item: ProductArrayType }> = ({item}) => {
                 <div className="cardProduct__image"/>
             }
             content={
-                <React.Fragment>
+                <div className="cardProduct cardProduct_content">
                     <header className={'cardProduct__header'}>
                         <Heading className={'cardProduct__name'} type={5}>
                             {item.name}
@@ -29,7 +29,7 @@ const CardProduct: React.FC<{ item: ProductArrayType }> = ({item}) => {
                             })
                         }
                     </footer>
-                </React.Fragment>
+                </div>
             }
         />
     )
