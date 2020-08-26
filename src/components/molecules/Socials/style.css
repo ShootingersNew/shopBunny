@@ -1,0 +1,11 @@
+.socials__link:not(:last-child) {
+    margin-right: 15px;
+}
+
+.socials {
+}
+
+.socials__link_vk {
+    position: relative;
+    top: -1px;
+}
