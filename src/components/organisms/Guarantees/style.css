@@ -1,0 +1,58 @@
+@import "../../_settings/_variables.css";
+
+.guarantees__header {
+    padding-bottom: 71px;
+}
+
+.guarantees__desc {
+    width: 540px;
+}
+
+.guarantees__content {
+    display: flex;
+}
+
+.guarantees__card {
+    width: 407px;
+    margin-right: 42px;
+}
+
+.guarantees__cardDesc {
+    width: 320px;
+    padding: 21px 0 24px;
+}
+
+.guarantees__cardDesc_large {
+    width: 380px;
+}
+
+.guarantees__accent {
+}
+
+.guarantees__banner {
+    position: relative;
+    width: 782px;
+    height: 337px;
+    padding: 79px;
+    box-sizing: border-box;
+}
+
+.guarantees__bannerText {
+    width: 80%;
+    line-height: 115%;
+    color: white;
+    font-size: var(--header-3-size);
+}
+
+.guarantees__button {
+    display: block;
+    width: 142px;
+    height: 68px;
+    position: absolute;
+    right: 166px;
+    bottom: 89px;
+    line-height: 68px;
+    text-align: center;
+    color: white;
+    background: var(--brand);
+}

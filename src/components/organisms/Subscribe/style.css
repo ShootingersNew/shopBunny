@@ -1,0 +1,35 @@
+.subscribe {
+    height: 224px;
+    display: flex;
+    align-items: center;
+}
+
+.subscribe__text {
+    display: inline-block;
+    font-size: 43px;
+    color: white;
+    margin-top: -10px;
+    margin-right: 63px;
+}
+
+.subscribe__input.input,
+.subscribe__button {
+    height: 54px;
+    width: 249px;
+    font-size: 18px;
+    padding-bottom: 3px;
+}
+
+.subscribe__button {
+    margin-top: -1px;
+}
+
+.subscribe__input {
+    border: 1px transparent;
+}
+
+.subscribe__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,78 @@
+@import "../../_settings/_variables.css";
+
+.contactUs {
+    padding-bottom: 51px;
+}
+
+.contactUs__preview {
+    width: 854px;
+    height: 691px;
+}
+
+.contactUs__content {
+    display: flex;
+
+}
+
+.contactUs__input {
+    display: block;
+    margin-bottom: 24px;
+    width: 814px;
+    padding: 0 26px;
+    height: 68px;
+}
+
+.contactUs__tasks {
+    width: 814px;
+    height: 186px;
+    line-height: 34px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    resize: none;
+}
+
+.contactUs__formLayout {
+    padding-left: 80px;
+
+}
+
+.contactUs__form {
+    width: 901px;
+    box-sizing: border-box;
+    margin-top: -15px;
+}
+
+.contactUs__formSubheader {
+    width: 842px;
+    margin-bottom: 33px;
+}
+
+.contactUs__button {
+    width: 235px;
+    height: 68px;
+    display: inline-block;
+}
+
+.contactUs__agreement {
+    display: inline-block;
+    margin-left: 25px;
+    width: 220px;
+    font-size: 14px;
+    color: var(--grey-2);
+    line-height: 157%;
+    position: relative;
+    top: -7px;
+}
+
+.contactUs__footer {
+    width: 457px;
+    margin-top: 33px;
+}
+
+.contactUs__telephoneNumber {
+    /*letter-spacing: 0.7px;*/
+}
+
+.contactUs__mail {
+    margin-left: 20px;
+}

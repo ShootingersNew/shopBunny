@@ -1,0 +1,15 @@
+.reviews__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 734px;
+}
+
+.reviews__card:nth-child(2) {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--grey-3);
+}
+
+.reviews__card:nth-child(3) {
+    padding-top: 24px;
+}
