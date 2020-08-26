@@ -10,6 +10,11 @@ import slide from './img/slid.jpg'
 //styles
 import back from './img/back.jpg'
 import Staff from "../../organisms/Staff";
+import Guarantees from "../../organisms/Guarantees";
+import Subscribe from "../../organisms/Subscribe";
+import Reviews from "../../organisms/Reviews";
+import ContactUs from "../../organisms/contactUs";
+import Footer from "../../organisms/Footer";
 //types
 type ScrollRefsTypes = {
     projects: number | undefined
@@ -28,7 +33,6 @@ const LandingPage = () => {
     return (
         <Index
             header={<Header scrollTo={scrollRefs.projects}/>}
-            footer={<footer>eee</footer>}
             headline={
                 <Headline img={back} linkTo={scrollRefs.projects}/>
             }
@@ -71,7 +75,12 @@ const LandingPage = () => {
                 ]}/>
             }
             staff={<Staff/>}
+            guarantees={<Guarantees></Guarantees>}
             priceList={<PriceList scrollTo={scrollRefs.projects}/>}
+            subscribe={<Subscribe/>}
+            reviews={<Reviews></Reviews>}
+            contactUs={<ContactUs/>}
+            footer={<Footer/>}
 
         >
 
