@@ -15,11 +15,7 @@ const Card: React.FC<CardPropTypes> = ({className, content, preview}) => {
     return (
         <article className={classNames}>
             {preview}
-            <div className={'content ' + className + '__content'}>
-                {
-                    content
-                }
-            </div>
+            {content}
         </article>
     )
 };
