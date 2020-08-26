@@ -20,3 +20,10 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+input[type=text],
+textarea,
+button {
+    font-size: var(--base-font-size);
+}
+
