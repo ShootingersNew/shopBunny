@@ -1,0 +1,5 @@
+@import "../../_settings/_variables.css";
+
+.copyrights__greyText {
+    color: var(--grey-3);
+}
