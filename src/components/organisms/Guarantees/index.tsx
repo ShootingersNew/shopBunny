@@ -9,8 +9,7 @@ import s from '../../atoms/mainColor/style.module.css'
 import f from '../../atoms/montserratBold/style.module.css'
 import bg from './images/guarantee.png'
 
-type GuaranteesTypes = {};
-const Guarantees: React.FC<GuaranteesTypes> = ({}) => {
+const Guarantees: React.FC<{ link: string }> = () => {
     return (
         <section className={'guarantees'}>
             <Subheader
