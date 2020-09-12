@@ -3,6 +3,7 @@ import React from "react"
 import classNames from 'classnames'
 //styles
 import './input.css'
+import fm from '../../atoms/montserratMedium/style.module.css'
 
 type InputTypes = {
     className?: string,
@@ -13,34 +14,59 @@ type InputTypes = {
     isValid?: void,
     register?: any,
     defaultValue?: string,
-    type?: 'textarea'
+    type?: 'textarea' | 'search'
 };
 const Input: React.FC<InputTypes> = ({name, className, placeholder, register, isValid, defaultValue, type}) => {
     let inputClass = classNames({
-        'input fonts__proximaNovaRegular': true,
+        'input': true,
         'input_isValid_true': isValid,
+        [`input_type_${type}`]: type
     });
-    return (
-        <React.Fragment>
-            {
-                type === 'textarea' ?
+    let input;
+    switch (type) {
+        case "textarea":
+            input =
+                <span className={inputClass + ' ' + className}>
                     <textarea
                         name={name}
-                        className={inputClass + ' ' + className}
+                        className={'input__field ' + fm.fontMontserratMedium}
                         placeholder={placeholder}
                         ref={register ? register : null}
                         defaultValue={defaultValue ? defaultValue : undefined}
-                    />
-                    :
+                    />;
+                </span>;
+            break;
+        case "search":
+            input =
+                <span className={inputClass + ' ' + className}>
                     <input
                         name={name}
                         type='text'
-                        className={inputClass + ' ' + className}
+                        className={'input__field ' + fm.fontMontserratMedium}
                         placeholder={placeholder}
                         ref={register ? register : null}
                         defaultValue={defaultValue ? defaultValue : undefined}
                     />
-            }
+                </span>;
+            break;
+        default:
+            input =
+                <span className={inputClass + ' ' + className}>
+
+                    <input
+                        name={name}
+                        type='text'
+                        className={'input__field ' + fm.fontMontserratMedium}
+                        placeholder={placeholder}
+                        ref={register ? register : null}
+                        defaultValue={defaultValue ? defaultValue : undefined}
+                    />
+                </span>;
+            break;
+    }
+    return (
+        <React.Fragment>
+            {input}
         </React.Fragment>
     )
 };
