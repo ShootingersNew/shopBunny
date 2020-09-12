@@ -14,6 +14,12 @@ body {
     padding: 0;
     background-color: var(--background-color);
     overflow-x: hidden;
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 a {
@@ -27,3 +33,24 @@ button {
     font-size: var(--base-font-size);
 }
 
+#root {
+    width: 100%;
+}
+
+.App {
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+
+.main {
+    height: 100%;
+    flex: 1;
+}
