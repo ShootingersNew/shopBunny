@@ -5,14 +5,13 @@ import List from "../../atoms/List"
 import cn from 'classnames'
 import './style.css'
 // types
+import {LinkItemType} from "../../../tsTypes";
+
 type NavPropTypes = {
     className?: string,
-    navArr: Array<navArrTypes>
+    navArr: Array<LinkItemType>
 }
-type navArrTypes = {
-    title: string,
-    link: string
-}
+
 const Nav: React.FC<NavPropTypes> = ({className, navArr}) => {
     let navClass = cn(
         {
