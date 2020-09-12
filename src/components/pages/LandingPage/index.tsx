@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState} from "react"
 import Index from "../../templates/LandingTemplate"
 import Header from "../../organisms/Header"
 import Headline from "../../organisms/Headline"
-import Projects from "../../organisms/Projects";
+import ItemsWithFilter from "../../organisms/ItemsWithFilter";
 import SlickSlider from "../../molecules/Slick";
 import PriceList from "../../organisms/PriceList";
 import slide from './img/slid.jpg'
@@ -32,13 +32,27 @@ const LandingPage = () => {
     useMountEffect(initRefs);
     return (
         <Index
-            header={<Header scrollTo={scrollRefs.projects}/>}
+            header={
+                <Header
+                    scrollTo={scrollRefs.projects}
+                />
+            }
             headline={
                 <Headline img={back} linkTo={scrollRefs.projects}/>
             }
             projects={
                 <div ref={projectsRef}>
-                    <Projects/>
+                    <ItemsWithFilter tags={[
+                        {"title": "Избранные проекты", "link": "favorite"},
+                        {"title": "Многостраничная полиграфия", "link": "poligraph"},
+                        {"title": "Печатная продукция", "link": "product"},
+                        {"title": "Сложный web-проект", "link": "difficult"},
+                        {"title": "Компактный интернет-магазин", "link": "compactShop"},
+                        {"title": "Лендинг", "link": "landing"},
+                        {"title": "Сайт-визитка", "link": "visitCard"},
+                        {"title": "Социальные сети", "link": "socials"},
+                        {"title": "Интернет-магазин", "link": "shop"}
+                    ]} url={'allProjects'} heading={true}/>
                 </div>
             }
             seoSlider={
@@ -74,11 +88,11 @@ const LandingPage = () => {
                     }
                 ]}/>
             }
-            staff={<Staff/>}
-            guarantees={<Guarantees></Guarantees>}
-            priceList={<PriceList scrollTo={scrollRefs.projects}/>}
+            staff={<Staff getItems={'staff'}/>}
+            guarantees={<Guarantees link={''}/>}
+            priceList={<PriceList getItems={'info'} scrollTo={scrollRefs.projects}/>}
             subscribe={<Subscribe/>}
-            reviews={<Reviews></Reviews>}
+            reviews={<Reviews/>}
             contactUs={<ContactUs/>}
             footer={<Footer/>}
 

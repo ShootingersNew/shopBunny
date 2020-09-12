@@ -1,8 +1,15 @@
+export type LinkItemType = {
+    title: string,
+    link?: string,
+    abbreviation?: string
+}
+
 export type ProductArrayType = {
     preview: string,
     name: string,
     type: string,
-    tags: string[]
+    cardTags: LinkItemType[],
+    filterTags: string[]
 }
 export type StaffArrayType = {
     preview: string,

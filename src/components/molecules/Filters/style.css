@@ -1,5 +1,62 @@
+@import "../../_settings/_variables.css";
+
+.filters {
+    color: var(--grey-1);
+    padding-top: 35px;
+}
+
+.filters_color_alt {
+    color: #505052;
+}
+
 .filters__tag {
     margin-right: 20px;
     line-height: 35px;
 }
 
+.filters_withSwitch {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 1336px;
+}
+
+.filters__openButton {
+    color: black;
+    margin-right: 21px;
+    cursor: pointer;
+}
+
+.filters_opened {
+    white-space: unset;
+    width: 950px;
+}
+
+.filters__link {
+    color: black;
+}
+
+.filters_opened .filters__tag {
+    display: inline-block;
+}
+
+.filters__search {
+    height: 38px;
+}
+
+.filters input::placeholder {
+    color: var(--grey-1);
+
+}
+
+.filters_withSearch {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters__wrapper {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

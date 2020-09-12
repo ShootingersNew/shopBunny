@@ -1,5 +1,5 @@
 .projects__filters {
-    width: 916px;
+    width: 960px;
     display: inline-block;
 }
 
@@ -10,4 +10,12 @@
 
 .projects {
     padding-bottom: 25px;
+}
+
+.projects__filters_heading_false {
+    padding-left: 410px;
+}
+
+.projects__filters_short {
+    padding-left: 573px
 }

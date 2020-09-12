@@ -1,16 +1,13 @@
 import React from 'react';
 import './components/_settings/_base.css'
-import LandingPage from "./components/pages/LandingPage";
 import './App.css';
 
-function App() {
+const App: React.FC = ({children}) => {
     return (
         <div className="App">
-
-            <LandingPage/>
-
+            {children}
         </div>
     );
-}
+};
 
 export default App;

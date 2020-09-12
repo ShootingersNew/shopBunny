@@ -12,13 +12,14 @@ const ColumnsWrapper: React.FC<ColumnsWrapperTypes> = ({items, card, type}) => {
     const classNames = cn(
         [`columnsWrapper columnsWrapper_${type}`]
     );
-    const mapItems = items.map((item) => {
-        return card(item)
-    });
     return (
         <div>
             <section className={classNames}>
-                {mapItems}
+                {
+                    items && items.map((item) => {
+                        return card(item)
+                    })
+                }
             </section>
         </div>
     )
