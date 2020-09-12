@@ -1,0 +1,23 @@
+.breadcrumbs__link {
+    color: #8C8C8C;
+    text-decoration: none;
+}
+
+.breadcrumbs__link:after {
+    content: '/';
+    position: relative;
+    color: #F5F5F5;
+    margin: 0 5px;
+}
+
+
+.breadcrumbs__active {
+    color: #C8C8C8;
+    text-decoration: none;
+}
+
+.breadcrumbs {
+    padding-top: 23px;
+    position: absolute;
+    top: 111px;
+}
