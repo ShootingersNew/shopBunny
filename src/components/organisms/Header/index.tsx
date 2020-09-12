@@ -22,7 +22,7 @@ const Header: React.FC<{ scrollTo: number | undefined }> = ({scrollTo}) => {
                         [
                             {
                                 title: 'Портфолио',
-                                link: '#'
+                                link: '/portfolio'
                             },
                             {
                                 title: 'Услуги',
@@ -30,7 +30,7 @@ const Header: React.FC<{ scrollTo: number | undefined }> = ({scrollTo}) => {
                             },
                             {
                                 title: 'Блог',
-                                link: '#'
+                                link: '/blog'
                             }
                         ]
                     }
