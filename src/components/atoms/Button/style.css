@@ -18,7 +18,7 @@
 }
 
 .button_accent {
-    border: 1px solid inherit;
+    height: calc(100% + 2px);
     color: white;
     background: var(--brand);
 }
