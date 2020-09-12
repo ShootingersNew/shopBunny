@@ -1,13 +1,15 @@
 import React from "react"
-
+//comps
+import Copyrights from "../../atoms/Copyrights"
+import Nav from "../../molecules/Nav"
+import Container from "../../atoms/Container"
+import Socials from "../../molecules/Socials"
+//styles
 import './style.css'
 
-import Copyrights from "../../atoms/Copyrights";
-import Nav from "../../molecules/Nav";
-import Container from "../../atoms/Container";
-import Socials from "../../molecules/Socials";
+// import {NavArrItemType} from "../../../tsTypes"
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <footer className={'footer'}>
             <Container className={'footer__container'}>
@@ -17,15 +19,15 @@ const Footer = () => {
                     navArr={
                         [
                             {
-                                title: 'Портфолио',
+                                title: 'Публичный договор',
                                 link: '#'
                             },
                             {
-                                title: 'Услуги',
+                                title: 'Платежная информация',
                                 link: '#'
                             },
                             {
-                                title: 'Блог',
+                                title: 'Вакансии',
                                 link: '#'
                             }
                         ]
