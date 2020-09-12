@@ -1,7 +1,5 @@
 import React from "react"
 //comps
-import Header from "../../organisms/Header"
-import Footer from "../../organisms/Footer"
 import Breadcrumbs from "../../organisms/Breadcrumbs"
 import ItemsWithFilter from "../../organisms/ItemsWithFilter"
 import DefaultTemplate from "../../templates/Default"
@@ -9,8 +7,6 @@ import DefaultTemplate from "../../templates/Default"
 const Blog = () => {
     return (
         <DefaultTemplate
-            header={<Header scrollTo={111}/>}
-            footer={<Footer/>}
             breadcrumbs={
                 <Breadcrumbs
                     items={
