@@ -1,18 +1,18 @@
 import React from "react"
 import {api} from "../../api/api"
-import {PriceArrayType, ProductArrayType, StaffArrayType} from "../../tsTypes"
 import {Subtract} from 'utility-types'
 
 export interface RESTProps {
     data: {
-        items?: (PriceArrayType | ProductArrayType | StaffArrayType)[],
-        base?: any
+        items?: any,
+        base?: any,
     }
 }
 
 export interface compProps {
     getItems?: string | { url: string, tag: string }
     getGlobalInfo?: boolean,
+    getAll?: boolean
 }
 
 interface CompStateTypes extends RESTProps {
@@ -45,15 +45,19 @@ const withRESTConnect = <T extends RESTProps>(Component: React.ComponentType<T>)
             }
 
         };
+        getGlobal: () => void = () => {
+            api.get('globalInfo')
+                .then((res: any) => {
+                    this.setState({data: {...this.state.data, base: res}})
+                })
+        };
         getData: () => void = () => {
-            let newData = {};
             if (this.props.getItems) {
-                newData = {...newData, items: this.getItems()}
+                this.getItems()
             }
             if (this.props.getGlobalInfo) {
-                newData = {...newData, globalInfo: api.get('globalInfo')}
+                this.getGlobal()
             }
-            this.setState({data: newData})
         };
 
         componentDidUpdate(prevProps: Readonly<Subtract<T, RESTProps> & compProps>, prevState: Readonly<CompStateTypes>, snapshot?: any): void {
