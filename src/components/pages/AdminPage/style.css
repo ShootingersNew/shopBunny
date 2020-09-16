@@ -1,0 +1,7 @@
+.editPanel__label {
+  display: block;
+}
+
+.editPanel__tag_isActive_true {
+  color: red;
+}

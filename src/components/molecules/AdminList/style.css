@@ -1,0 +1,27 @@
+.adminList {
+    list-style: none;
+    padding: 0;
+    height: 300px;
+    overflow: auto;
+}
+
+.adminList__item {
+    border: 1px solid var(--brand-spare);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.adminList__img {
+    width: 100px;
+    height: 100px;
+    background-color: var(--brand-spare);
+}
+
+.adminList__tags {
+    background-color: #C4C4C4;
+}
+
+.adminList__tagList {
+    padding: 0;
+    list-style: none;
+}

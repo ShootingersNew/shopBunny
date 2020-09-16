@@ -15,7 +15,9 @@ export default function Routes() {
                 <Portfolio/>
             </Route>
             <Route path={'/blog'} component={Blog}/>
-            <Route path={'/admin'} component={AdminPage}/>
+            <Route path={'/admin'}>
+                <AdminPage getGlobalInfo={true} getItems={'all'}/>
+            </Route>
         </Switch>
 
     )
