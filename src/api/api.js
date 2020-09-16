@@ -15,7 +15,7 @@ const getter = (url) => {
 };
 
 export const api = {
-    get(url = 'allProjects') {
+    get(url) {
         return getter(url)
     },
     filterByTags(baseUrl, tag) {
