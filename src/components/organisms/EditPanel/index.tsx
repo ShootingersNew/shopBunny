@@ -97,7 +97,7 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
                                     name={'categories'}
                                     defaultChecked={isActive}
                                     className={'editPanel__tag_isActive_' + isActive} link={category}
-                                    filterClickHandler={(val) => {
+                                    changeHandler={(val) => {
                                         console.log(val)
                                     }}>{category}</Tag>
                             })}
@@ -117,9 +117,10 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
                                         defaultChecked={isActive}
                                         data-active={isActive}
                                         className={'editPanel__tag_isActive_' + isActive}
-                                        link={type} filterClickHandler={(val) => {
-                                        console.log(val)
-                                    }}
+                                        link={type}
+                                        changeHandler={(val) => {
+                                            console.log(val)
+                                        }}
                                     >
                                         {type}
                                     </Tag>
@@ -142,7 +143,7 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
                                         name={'tags'}
                                         link={tag.link}
                                         className={'editPanel__tag_isActive_' + isActive}
-                                        filterClickHandler={(val) => {
+                                        changeHandler={(val) => {
                                         }}
                                     >
                                         {tag.title}
