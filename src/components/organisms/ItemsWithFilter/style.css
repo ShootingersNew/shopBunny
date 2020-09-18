@@ -12,8 +12,10 @@
     padding-bottom: 25px;
 }
 
-.projects__filters_heading_false {
-    padding-left: 410px;
+.projects__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
 }
 
 .projects__filters_short {
