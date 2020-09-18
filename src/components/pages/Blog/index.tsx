@@ -3,22 +3,22 @@ import React from "react"
 import Breadcrumbs from "../../organisms/Breadcrumbs"
 import ItemsWithFilter from "../../organisms/ItemsWithFilter"
 import DefaultTemplate from "../../templates/Default"
+import {RouteComponentProps} from "react-router-dom"
+import Article from "../../organisms/Article";
 
-const Blog = () => {
+const Blog: React.FC<RouteComponentProps> = (props) => {
     return (
         <DefaultTemplate
-            breadcrumbs={
-                <Breadcrumbs
+        >
+            <ItemsWithFilter
+                breadcrumbs={<Breadcrumbs
                     items={
                         [
                             {title: 'Главная', path: '/'},
                             {title: 'Блог'},
                         ]
                     }
-                />
-            }
-        >
-            <ItemsWithFilter
+                />}
                 isWithSwitch={false}
                 tags={[
                     {
@@ -39,7 +39,7 @@ const Blog = () => {
                 url={'allProjects'}
                 isWithClearButton={false}
                 isWithSearch={true}
-                openInArticles={true}
+                article={(id: number) => (<Article id={id}/>)}
             />
         </DefaultTemplate>
     )
