@@ -37,6 +37,7 @@
 }
 
 .input__field {
+    width: 100%;
     border: 1px solid #C8C8C8;
     outline: none;
     color: black;
@@ -49,4 +50,8 @@
     border: none;
     padding: 0;
     width: 100%;
+}
+
+.input__checkbox {
+    display: none;
 }

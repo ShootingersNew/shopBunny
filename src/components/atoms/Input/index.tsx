@@ -1,9 +1,11 @@
 //libs
 import React from "react"
 import classNames from 'classnames'
+import ReactInputMask from "react-input-mask";
 //styles
 import './input.css'
 import fm from '../../atoms/montserratMedium/style.module.css'
+import {mask} from "../../_settings/_config"
 
 type InputTypes = {
     className?: string,
@@ -14,28 +16,40 @@ type InputTypes = {
     isValid?: void,
     register?: any,
     defaultValue?: string,
-    type?: 'textarea' | 'search' | 'radio' | 'checkbox',
+    type?: 'textarea' | 'search' | 'radio' | 'checkbox' | 'phone',
     defaultChecked?: boolean,
     id?: string
 };
-const Input: React.FC<InputTypes> = ({children, id, name, className, placeholder, register, isValid, defaultValue, type, defaultChecked}) => {
-    let inputClass = classNames({
-        'input': true,
-        'input_isValid_true': isValid,
-        [`input_type_${type}`]: type
-    });
-    let input;
-    switch (type) {
-        case "textarea":
-            input =
-                <span className={inputClass + ' ' + className}>
+const Input: React.FC<InputTypes> =
+    ({
+         children,
+         id,
+         name,
+         className,
+         placeholder,
+         register, isValid,
+         defaultValue,
+         type,
+         defaultChecked,
+         onChange
+     }) => {
+        let inputClass = classNames({
+            'input': true,
+            'input_isValid_true': isValid,
+            [`input_type_${type}`]: type
+        });
+        let input;
+        switch (type) {
+            case "textarea":
+                input =
+                    <span className={inputClass + ' ' + className}>
                     <textarea
                         name={name}
                         className={'input__field ' + fm.fontMontserratMedium}
                         placeholder={placeholder}
                         ref={register ? register : null}
                         defaultValue={defaultValue ? defaultValue : undefined}
-                    />;
+                    />
                 </span>;
             break;
         case "radio":
@@ -57,6 +71,7 @@ const Input: React.FC<InputTypes> = ({children, id, name, className, placeholder
             input =
                 <div className={inputClass + ' ' + className}>
                     <input
+                        onChange={onChange}
                         name={name}
                         type='checkbox'
                         className={'input__checkbox'}
@@ -81,10 +96,24 @@ const Input: React.FC<InputTypes> = ({children, id, name, className, placeholder
                     />
                 </span>;
             break;
-        default:
-            input =
-                <span className={inputClass + ' ' + className}>
-
+            case "phone":
+                input =
+                    <span className={inputClass + ' ' + className}>
+                    <ReactInputMask
+                        name={name}
+                        type='text'
+                        className={'input__field ' + fm.fontMontserratMedium}
+                        placeholder={placeholder}
+                        ref={register ? register : null}
+                        defaultValue={defaultValue ? defaultValue : undefined}
+                        mask={mask}
+                        maskChar="_"
+                    />
+                </span>;
+                break;
+            default:
+                input =
+                    <span className={inputClass + ' ' + className}>
                     <input
                         name={name}
                         type='text'
