@@ -6,32 +6,30 @@ import ItemsWithFilter from "../../organisms/ItemsWithFilter"
 
 const Portfolio = () => {
     return (
-        <DefaultTemplate
-            breadcrumbs={
-                <Breadcrumbs
+        <DefaultTemplate>
+            <ItemsWithFilter
+                breadcrumbs={<Breadcrumbs
                     items={
                         [
                             {title: 'Главная', path: '/'},
                             {title: 'Портфолио'},
                         ]
                     }
-                />
-            }
-        >
-            <ItemsWithFilter tags={[
-                {"title": "Избранные проекты", "link": "favorite"},
-                {"title": "Многостраничная полиграфия", "link": "poligraph"},
-                {"title": "Печатная продукция", "link": "product"},
-                {"title": "Сложный web-проект", "link": "difficult"},
-                {"title": "Компактный интернет-магазин", "link": "compactShop"},
-                {"title": "Лендинг", "link": "landing"},
-                {"title": "Сайт-визитка", "link": "visitCard"},
-                {"title": "Социальные сети", "link": "socials"},
-                {"title": "Интернет-магазин", "link": "shop"}
-            ]}
-                             url={'allProjects'}
-                             isWithSwitch={true}
-                             isWithSearch={false}
+                />}
+                tags={[
+                    {"title": "Избранные проекты", "link": "favorite"},
+                    {"title": "Многостраничная полиграфия", "link": "poligraph"},
+                    {"title": "Печатная продукция", "link": "product"},
+                    {"title": "Сложный web-проект", "link": "difficult"},
+                    {"title": "Компактный интернет-магазин", "link": "compactShop"},
+                    {"title": "Лендинг", "link": "landing"},
+                    {"title": "Сайт-визитка", "link": "visitCard"},
+                    {"title": "Социальные сети", "link": "socials"},
+                    {"title": "Интернет-магазин", "link": "shop"}
+                ]}
+                url={'allProjects'}
+                isWithSwitch={true}
+                isWithSearch={false}
 
             />
         </DefaultTemplate>
