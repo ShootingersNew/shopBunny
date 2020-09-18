@@ -1,6 +1,12 @@
-
+@import "../../_settings/_variables.css";
 
 .tag {
     cursor: pointer;
     display: inline-block;
+}
+
+.tag input:checked ~ .tag__text {
+    background: var(--brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

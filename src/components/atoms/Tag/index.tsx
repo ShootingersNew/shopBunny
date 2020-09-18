@@ -4,7 +4,7 @@ import cn from 'classnames'
 import './style.css'
 
 type TagPropTypes = {
-    filterClickHandler?: (val: string) => void,
+    changeHandler?: (val: string) => void,
     className?: string,
     link?: string,
     name?: string,
@@ -13,22 +13,24 @@ type TagPropTypes = {
 }
 const Tag: React.FC<TagPropTypes> =
     ({
-         filterClickHandler,
+         changeHandler,
          children,
          link,
          className,
          name = 'default',
          defaultChecked = false,
-         type = 'radio'
+         type = 'checkbox',
      }) => {
         const classNames = cn({
             tag: true,
             [`${className}`]: className
         });
-        const clickHandler: (e: React.FormEvent) => void = (e) => {
+        const tagChangeHandler: (e: React.FormEvent) => void = (e) => {
             const filter = (e.target as HTMLElement).getAttribute('data-id');
-            if (filterClickHandler) {
-                filterClickHandler(filter as string)
+            console.log('eeeee');
+            if (changeHandler) {
+
+                changeHandler(filter as string)
             }
         };
         return (
@@ -38,19 +40,21 @@ const Tag: React.FC<TagPropTypes> =
                         <label>
                             <Input
                                 type={type}
-                                onChange={clickHandler}
+                                onChange={tagChangeHandler}
                                 name={name}
                                 id={link}
                                 data-tag={children}
                                 className={classNames}
                                 defaultChecked={defaultChecked}
                                 defaultValue={children as string}
-                            />
-                            #{children}
+                            >
+                                <span className="tag__text">
+                                    #{children}
+                                </span>
+                            </Input>
                         </label>
                         :
-                        <Input defaultChecked={defaultChecked} className={className} name={name} type={type}
-                               onChange={clickHandler}>#{children}</Input>
+                        <span className={classNames}>#{children}</span>
                 }
             </React.Fragment>
         )
