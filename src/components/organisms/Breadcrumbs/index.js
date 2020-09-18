@@ -11,7 +11,7 @@ export default function Breadcrumbs({items}) {
         items: PropTypes.array.isRequired,
     };
     return (
-        <div className="breadcrumbs">
+        <div className={"breadcrumbs"}>
             {items && items.map((item, i) => (
                 <BreadcrumbsLink key={i} active={i === items.length - 1} path={item.path}>{item.title}</BreadcrumbsLink>
             ))
