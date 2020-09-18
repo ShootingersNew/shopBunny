@@ -18,13 +18,16 @@
     display: block;
     margin-bottom: 24px;
     width: 814px;
-    padding: 0 26px;
+    /*padding: 0 26px;*/
     height: 68px;
 }
 
 .contactUs__tasks {
     width: 814px;
     height: 186px;
+}
+
+.contactUs__tasks textarea {
     line-height: 34px;
     padding-top: 13px;
     padding-bottom: 13px;

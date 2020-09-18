@@ -1,5 +1,4 @@
 import React from "react"
-import InputMask from 'react-input-mask'
 //comps
 import Subheader from "../../molecules/Subheader"
 import Form from "../../atoms/Form/Form"
@@ -45,16 +44,13 @@ const ContactUs: React.FC = () => {
                                             minLength: 2
                                         })}
                                     />
-                                    <Controller
-                                        as={InputMask}
-                                        control={control}
-                                        type={'text'}
+                                    <Input
+                                        type={'phone'}
                                         name={'phone'}
                                         placeholder={'Введите номер телефона'}
                                         className={' input contactUs__input contactUs__name input_isValid_' + isValidInput('phone') + ' ' + fm.fontMontserratMedium}
-                                        mask={mask} maskChar="_"
                                         defaultValue={''}
-                                        rules={{
+                                        register={{
                                             validate: (value: string) => {
                                                 const numbersInMask = mask.length - mask.replace(/\d/gm, '').length;
                                                 const numbersInVal = value.length - value.replace(/\d/gm, '').length;
