@@ -2,7 +2,6 @@
 
 .filters {
     color: var(--grey-1);
-    padding-top: 35px;
 }
 
 .filters_color_alt {
@@ -50,9 +49,9 @@
 }
 
 .filters_withSearch {
-    width: auto;
     display: flex;
     justify-content: space-between;
+    width: 1181px;
 }
 
 .filters__wrapper {

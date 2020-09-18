@@ -11,17 +11,28 @@ import accent from '../../atoms/mainColor/style.module.css'
 import {LinkItemType} from "../../../tsTypes"
 
 type FiltersPropTypes = {
-    filterClickHandler: (val: string) => void,
+    changeHandler: (val: string) => void,
     clearFilter?: () => void,
     arr: LinkItemType[],
     className?: string,
     type?: 'accentButton',
     isWithSwitch?: boolean,
     isWithClearButton?: boolean,
-    search?: () => void
+    search?: () => void,
+    breadcrumbs?: JSX.Element
 }
 const Filters: React.FC<FiltersPropTypes> =
-    ({search, arr, className, type, isWithSwitch, filterClickHandler, clearFilter, isWithClearButton}) => {
+    ({
+         search,
+         arr,
+         className,
+         type,
+         isWithSwitch,
+         changeHandler,
+         clearFilter,
+         isWithClearButton,
+         breadcrumbs
+     }) => {
         const [isOpen, setIsOpen] = useState(false);
         const classNames = cn({
             filters: true,
@@ -41,22 +52,32 @@ const Filters: React.FC<FiltersPropTypes> =
             <div className={classNames}>
                 <div className="filters__wrapper">
                     {
+                        breadcrumbs ? breadcrumbs : false
+                    }
+                    {
                         isWithSwitch && !isOpen &&
                         <span className="filters__openButton" onClick={openClickHandler}>Фильтры</span>
                     }
                     {
                         arr.map((linkItem, idx) => {
                             if (idx === 0 && type === 'accentButton') {
-                                return <Tag filterClickHandler={filterClickHandler}
-                                            className={'filters__tag ' + c.mainColor}
-                                            link={linkItem.link}>{linkItem.title}</Tag>
+                                return <Tag
+                                    changeHandler={changeHandler}
+                                    className={'filters__tag ' + c.mainColor}
+                                    link={linkItem.link}>
+                                    {linkItem.title}
+                                </Tag>
                             } else {
-                                return <Tag filterClickHandler={filterClickHandler} link={linkItem.link}
-                                            className={'filters__tag'}>{linkItem.title}</Tag>
+                                return <Tag
+                                    changeHandler={changeHandler}
+                                    link={linkItem.link}
+                                    className={'filters__tag'}>
+                                    {linkItem.title}
+                                </Tag>
                             }
                         })
                     }
-                    {isWithClearButton !== false && <Tag filterClickHandler={clearFilter}>Смотреть все</Tag>}
+                    {isWithClearButton !== false && <Tag changeHandler={clearFilter}>Смотреть все</Tag>}
                 </div>
                 {search && <Input type={'search'} className={'filters__search'} name={'search'}
                                   placeholder='Поиск по более чем 300 статьям'/>}
