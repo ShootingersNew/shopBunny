@@ -69,25 +69,25 @@ const ItemsWithFilter: React.FC<ProjectPropTypes>
     return (
 
         <section className={'projects'}>
+            {
+                heading &&
+                <Subheader
+                    className={'projects__header'}
+                    content={
+                        <Filters
+                            changeHandler={filterChangeHandler}
+                            clearFilter={clearFilter}
+                            className={projectFiltersClassNames}
+                            arr={tags as LinkItemType[]}
+                            isWithClearButton={isWithClearButton}
+                            search={isWithSearch === true ? search : undefined}
+                        />
+                    }
+                >
+                    Проекты
+                </Subheader>
+            }
             <Container className={'projects__container'}>
-                {
-                    heading &&
-                    <Subheader
-                        className={'projects__header'}
-                        content={
-                            <Filters
-                                changeHandler={filterChangeHandler}
-                                clearFilter={clearFilter}
-                                className={projectFiltersClassNames}
-                                arr={tags as LinkItemType[]}
-                                isWithClearButton={isWithClearButton}
-                                search={isWithSearch === true ? search : undefined}
-                            />
-                        }
-                    >
-                        Проекты
-                    </Subheader>
-                }
                 {
                     !heading &&
                     <React.Fragment>
@@ -105,7 +105,6 @@ const ItemsWithFilter: React.FC<ProjectPropTypes>
                 }
             </Container>
             <Switch>
-                {console.log(match.path)}
                 <Route path={`${match.path}`} exact>
                     <Showcase onClick={itemClickHandler} getItems={getItemsUrl()}/>
                 </Route>

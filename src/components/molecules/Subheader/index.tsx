@@ -16,15 +16,17 @@ const Subheader: React.FC<SubheaderPropTypes> = ({content, children, className})
         [`${className}`]: className
     });
     return (
-        <Container className={classNames}>
-            <Heading type={2}>{children}</Heading>
-            {
-                content &&
-                <div className="subheader__content">
-                    {content}
-                </div>
-            }
-        </Container>
+        <div className="subheader__wrapper">
+            <Container className={classNames}>
+                <Heading type={2}>{children}</Heading>
+                {
+                    content &&
+                    <div className="subheader__content">
+                        {content}
+                    </div>
+                }
+            </Container>
+        </div>
     )
 };
 export default Subheader

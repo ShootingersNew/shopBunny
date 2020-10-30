@@ -1,5 +1,6 @@
 import React from "react"
 import cn from 'classnames'
+import Container from "../Container";
 
 type CardPropTypes = {
     className?: string,
@@ -23,7 +24,9 @@ const Card: React.FC<CardPropTypes> = ({onClick, className, content, preview}) =
     return (
         <article className={classNames} onClick={clickHandler}>
             {preview}
-            {content}
+            <Container className="card__container">
+                {content}
+            </Container>
         </article>
     )
 };

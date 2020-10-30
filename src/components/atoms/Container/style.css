@@ -5,8 +5,23 @@
     width: 100%;
     max-width: var(--width-container);
 }
+
+.container_mobile {
+    max-width: none;
+    width: auto;
+    margin: 0;
+}
+
 @media all and (max-width: 600px) {
+    .container_mobile {
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .container {
-        max-width: var(--mobile-container);
+    }
+
+    .container_desktop {
+        max-width: unset;
     }
 }

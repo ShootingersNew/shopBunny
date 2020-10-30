@@ -42,17 +42,21 @@ const LandingPage = () => {
             }
             projects={
                 <div ref={projectsRef}>
-                    <ItemsWithFilter tags={[
-                        {"title": "Избранные проекты", "link": "favorite"},
-                        {"title": "Многостраничная полиграфия", "link": "poligraph"},
-                        {"title": "Печатная продукция", "link": "product"},
-                        {"title": "Сложный web-проект", "link": "difficult"},
-                        {"title": "Компактный интернет-магазин", "link": "compactShop"},
-                        {"title": "Лендинг", "link": "landing"},
-                        {"title": "Сайт-визитка", "link": "visitCard"},
-                        {"title": "Социальные сети", "link": "socials"},
-                        {"title": "Интернет-магазин", "link": "shop"}
-                    ]} url={'allProjects'} heading={true}/>
+                    <ItemsWithFilter
+                        tags={[
+                            {"title": "Избранные проекты", "link": "favorite"},
+                            {"title": "Многостраничная полиграфия", "link": "poligraph"},
+                            {"title": "Печатная продукция", "link": "product"},
+                            {"title": "Сложный web-проект", "link": "difficult"},
+                            {"title": "Компактный интернет-магазин", "link": "compactShop"},
+                            {"title": "Лендинг", "link": "landing"},
+                            {"title": "Сайт-визитка", "link": "visitCard"},
+                            {"title": "Социальные сети", "link": "socials"},
+                            {"title": "Интернет-магазин", "link": "shop"}
+                        ]}
+                        url={'allProjects'}
+                        heading={true}
+                    />
                 </div>
             }
             seoSlider={

@@ -9,3 +9,23 @@
     padding-top: 57px;
     box-sizing: border-box;
 }
+@media all and (max-width: 600px) {
+    .headline {
+        height: 419px;
+        padding-top: 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .headline__header {
+        font-size: 32px;
+        margin: 0;
+        width: 200px;
+    }
+
+    .headline__container {
+        height: auto;
+    }
+}

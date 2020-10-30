@@ -11,7 +11,7 @@ interface ShowCaseType extends compProps {
 
 const Showcase: React.FC<RESTProps & ShowCaseType> = ({data, getItems, onClick}) => {
     return (
-        <Container>
+        <Container className={'container_desktop'}>
             <ColumnsWrapper
                 type={"showcase"}
                 items={data.items as ProductArrayType[]}

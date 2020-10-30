@@ -6,13 +6,13 @@
     line-height: 35px;
 }
 
-.cardProduct__header {
-    margin-top: 11px;
+.cardProduct__content {
+    padding-top: 11px;
 }
 
 .cardProduct__image {
     height: 295px;
-    width: 568px;
+    width: 100%;
     background: var(--brand);
 }
 
@@ -28,4 +28,39 @@
 
 .cardProduct__footer {
     color: #C4C4C4;
+}
+
+@media all and (max-width: 600px) {
+    .cardProduct {
+        width: 100%;
+        height: auto;
+        border-bottom: 11px solid var(--mobilebg);
+    }
+
+    .cardProduct__type {
+        display: block;
+        margin-left: 0;
+    }
+
+    .cardProduct__tag {
+        font-size: 0.875em;
+        margin-right: 0;
+    }
+
+    .cardProduct__footer {
+        line-height: 1.57;
+    }
+
+    .cardProduct__image {
+        height: 51.25vw;
+    }
+
+    .cardProduct__header {
+        line-height: 1.125;
+        margin-bottom: 10px;
+    }
+
+    .cardProduct__content {
+        padding: 35px 0;
+    }
 }

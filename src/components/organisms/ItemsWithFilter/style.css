@@ -15,7 +15,7 @@
 .projects__container {
     display: flex;
     justify-content: space-between;
-    padding-top: 35px;
+    /*padding-top: 35px;*/
 }
 
 .projects__filters_short {

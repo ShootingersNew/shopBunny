@@ -28,3 +28,17 @@
 .columnsWrapper_price .card {
     margin: 15px 15px;
 }
+@media all and (max-width: 600px) {
+    .columnsWrapper {
+        flex-direction: column;
+    }
+
+    .columnsWrapper_showcase {
+        margin: 0;
+        padding: 0;
+    }
+
+    .columnsWrapper_showcase .card {
+        margin: 0;
+    }
+}

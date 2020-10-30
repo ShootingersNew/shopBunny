@@ -46,8 +46,7 @@ const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName, 
             )
         }
 
-    }
-    ;
+    };
 
     return <ul className={listClassNames}>
         {
