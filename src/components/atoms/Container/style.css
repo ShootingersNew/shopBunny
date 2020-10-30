@@ -5,3 +5,8 @@
     width: 100%;
     max-width: var(--width-container);
 }
+@media all and (max-width: 600px) {
+    .container {
+        max-width: var(--mobile-container);
+    }
+}

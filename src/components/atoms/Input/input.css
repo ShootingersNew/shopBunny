@@ -6,9 +6,6 @@
     font-size: var(--base-font-size)
 }
 
-.input_isValid_true {
-    border: 1px solid #79BA38;
-}
 
 .input_type_search {
     position: relative;
@@ -36,9 +33,13 @@
     display: inline-block;
 }
 
-.input__field {
-    width: 100%;
+.input:not(.input_type_checkbox) {
     border: 1px solid #C8C8C8;
+}
+
+.input__field {
+    border: unset;
+    width: 100%;
     outline: none;
     color: black;
     padding: 0 36px;
@@ -54,4 +55,8 @@
 
 .input__checkbox {
     display: none;
+}
+
+.input_isValid_true {
+    border: 1px solid #79BA38;
 }

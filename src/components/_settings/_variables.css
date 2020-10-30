@@ -36,6 +36,7 @@
     /*
     container
     */
-    --width-container: 1752px
+    --width-container: 1752px;
+    --mobile-container: 240px
 }
 

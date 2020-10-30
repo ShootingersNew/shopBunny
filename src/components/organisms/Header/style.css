@@ -13,3 +13,40 @@
 .header__nav {
     margin-left: 116px;
 }
+
+.header__back-button {
+    display: none;
+}
+
+@media all and (max-width: 600px) {
+    .header {
+        height: 49px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__contact-us {
+        display: none;
+    }
+
+    .header__container {
+        height: 100%;
+    }
+
+    .header__back-button {
+        display: block;
+        height: 100%;
+        width: 69px;
+        position: absolute;
+        left: -30px;
+        background-color: white;
+        outline: none;
+        border: unset;
+    }
+
+    .header__logo {
+        margin-left: 39px;
+    }
+}

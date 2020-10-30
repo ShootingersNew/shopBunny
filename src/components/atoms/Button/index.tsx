@@ -12,7 +12,7 @@ interface ButtonPropTypes {
     className?: string,
     type?: 'link' | 'input',
     disabled?: boolean,
-    children?: string
+    children?: string | JSX.Element
     link?: string
 }
 
@@ -41,7 +41,7 @@ const Button: React.ForwardRefExoticComponent<ButtonPropTypes> = React.forwardRe
                     type={'submit'}
                     className={btnClassname + ' button_type_input'}
                     disabled={disabled}
-                    value={children}
+                    value={children as string}
                 />;
                 break;
             default:
