@@ -17,7 +17,7 @@
     --atenttion: #2196f3;
     --wait: #fff8dd;
     --error: #d92525;
-
+    --mobilebg: #F0F0F0;
     /*
     * Fonts
     */
@@ -37,6 +37,16 @@
     container
     */
     --width-container: 1752px;
-    --mobile-container: 240px
+}
+
+@media all and (max-width: 600px) {
+    :root {
+        --width-container: 240px;
+        --base-font-size: 16px;
+        --header-1-size: 4.76em;
+        --header-2-size: 1.625em;
+        --header-3-size: 1.5em;
+        --header-4-size: 1.1904em;
+    }
 }
 
