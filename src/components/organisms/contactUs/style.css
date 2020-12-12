@@ -79,3 +79,149 @@
 .contactUs__mail {
     margin-left: 20px;
 }
+
+@media all and (max-width: 1600px) and (min-width: 600px) {
+    .contactUs__formLayout {
+        max-width: 649px;
+        width: 51.5%;
+    }
+
+    .contactUs__form {
+        width: 100%;
+        margin-top: -7px;
+    }
+
+    .contactUs__input {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .contactUs__input:not(.input_type_textarea) {
+        height: 54px;
+    }
+
+    .contactUs__footer {
+        line-height: 24px;
+        margin-top: 25px;
+    }
+
+    .contactUs__preview {
+        width: 43.7%;
+        height: 572px;
+    }
+
+    .contactUs__formSubheader {
+        font-size: 39px;
+        margin-bottom: 20px;
+        width: auto;
+    }
+}
+
+@media all and (max-width: 1600px) and (min-width: 600px) {
+    .contactUs__button {
+        height: 54px;
+        line-height: 54px;
+    }
+
+    .contactUs__agreement {
+        top: -1px;
+    }
+}
+
+@media all and (max-width: 1100px) and (min-width: 600px) {
+    .contactUs__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactUs__agreement {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .contactUs__preview {
+        width: 100%;
+        background-size: cover;
+    }
+
+    .contactUs__formLayout {
+        padding-top: 25px;
+        padding-left: 0;
+    }
+}
+
+@media all and (max-width: 950px) and (min-width: 600px) {
+    .contactUs__agreement {
+        margin-top: 10px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .contactUs {
+        border-bottom: 13px solid var(--mobilebg);
+    }
+
+    .contactUs__form {
+        width: 100%;
+        margin-top: 0;
+        padding-top: 31px;
+    }
+
+    .contactUs__input {
+        width: 100%;
+    }
+
+    .contactUs__formLayout {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .contactUs__formSubheader {
+        width: 100%;
+    }
+
+    .contactUs .subheader__wrapper {
+        display: none;
+    }
+
+    .contactUs__input {
+        height: 49px;
+    }
+
+    .contactUs__button {
+        height: 49px;
+        width: 175px;
+    }
+
+    .contactUs__tasks {
+        height: 186px;
+    }
+
+    .contactUs__agreement {
+        margin-left: 0;
+        line-height: 22px;
+        top: 0;
+        margin-top: 7px;
+    }
+
+    .contactUs__footer {
+        width: auto;
+        margin-top: 7px;
+    }
+
+    .contactUs__content {
+        display: block;
+    }
+
+    .contactUs__preview {
+        height: 238px;
+    }
+
+    .contactUs__telephoneNumber {
+        display: block;
+    }
+
+    .contactUs__mail {
+        margin-left: 0;
+    }
+}

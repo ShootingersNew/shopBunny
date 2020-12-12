@@ -56,3 +56,178 @@
     color: white;
     background: var(--brand);
 }
+
+.guarantees__image {
+    display: none;
+}
+
+@media all and (max-width: 1600px) and (min-width: 600px) {
+    .guarantees__card {
+        min-width: 293px;
+        width: 293px;
+    }
+
+    .guarantees .heading {
+        font-size: 32px;
+    }
+
+    .guarantees__cardDesc {
+        font-size: 18px;
+        width: 97%;
+        font-weight: normal;
+    }
+
+    .guarantees__accent {
+        width: 110%;
+    }
+
+    .guarantees__banner {
+        max-width: 643px;
+        padding-top: 25px;
+        padding-left: 40px;
+        padding-right: 0;
+        height: 258px;
+        margin-left: auto;
+
+    }
+
+    .guarantees__bannerText {
+        font-size: 32px;
+        width: 285px;
+        line-height: 1.04;
+    }
+
+    .guarantees__button {
+        left: 40px;
+        bottom: 54px;
+        height: 56px;
+        line-height: 56px;
+    }
+
+    .guarantees .subheader__content {
+        margin-bottom: -56px;
+    }
+
+    .guarantees__desc {
+        width: 430px;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 600px) {
+    .guarantees__content {
+        flex-wrap: wrap;
+    }
+
+    .guarantees__banner {
+        width: 100%;
+        margin-top: 30px;
+        max-width: unset;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .guarantees__card {
+        width: 49.5%;
+        margin-right: 0.5%;
+    }
+
+    .guarantees__cardDesc {
+        font-size: 16px;
+    }
+
+    .guarantees__card .heading {
+        /*width: 101%;*/
+        font-size: 28px;
+    }
+
+    .guarantees__card:nth-child(3) {
+        margin-right: 0;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .guarantees__card {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .guarantees__content-wrapper {
+        padding-top: 19px;
+        padding-bottom: 14px;
+    }
+
+    .guarantees__banner {
+        padding: 0;
+        height: 218px;
+    }
+
+    .guarantees__banner-container {
+        height: 100%;
+        padding-top: 32px;
+        padding-bottom: 40px;
+        box-sizing: border-box;
+    }
+
+    .guarantees__image {
+        display: block;
+        width: 100%;
+        height: 49.3vw;
+    }
+
+    .guarantees__header {
+        flex-direction: column;
+        align-items: start;
+        padding-bottom: 25px;
+    }
+
+    .guarantees__header .subheader__content {
+        display: block;
+    }
+
+    .guarantees__header .heading {
+        margin-bottom: 12px;
+        line-height: 100%;
+    }
+
+    .guarantees__desc {
+        width: auto;
+        position: relative;
+        padding-left: 18px;
+        box-sizing: border-box;
+        line-height: 150%;
+    }
+
+    .guarantees__desc::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: calc(100% - 3px);
+        width: 5px;
+        top: 2px;
+        background: linear-gradient(180deg, #EC1FB3 0%, rgba(250, 255, 13, 0));
+    }
+
+    .guarantees__content {
+        display: block;
+    }
+
+    .guarantees__banner {
+        width: 100%;
+    }
+
+    .guarantees__button {
+        position: static;
+        margin-top: 25px;
+        height: 49px;
+        line-height: 49px;
+    }
+
+    .guarantees__bannerText {
+        width: 90%;
+        line-height: 100%;
+    }
+
+    .guarantees__cardDesc {
+        width: auto;
+    }
+}

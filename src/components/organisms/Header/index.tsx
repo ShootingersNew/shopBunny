@@ -11,7 +11,7 @@ import {useRouteMatch} from 'react-router-dom'
 import './style.css'
 
 
-const Header: React.FC<{ scrollTo: number | undefined }> = ({scrollTo}) => {
+const Header: React.FC<{ scrollTo: string }> = ({scrollTo}) => {
     const isExact = useRouteMatch().isExact;
     return (
         <header className={'header'}>

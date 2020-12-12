@@ -1,6 +1,22 @@
 .projects__filters {
-    width: 960px;
+    /*width: 960px;*/
     display: inline-block;
+}
+
+.projects__breadcrumbs {
+
+}
+
+.projects__animWrapper {
+}
+
+.projects__head-wrapper {
+    display: flex;
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+    padding-bottom: 37px;
+    background-color: var(--background-color);
 }
 
 .projects__header {
@@ -10,6 +26,8 @@
 
 .projects {
     padding-bottom: 25px;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .projects__container {
@@ -20,4 +38,77 @@
 
 .projects__filters_short {
     padding-left: 573px
+}
+
+@media all and (max-width: 1600px) {
+    .projects__filters {
+        font-size: 21px;
+    }
+
+    .projects {
+        padding-bottom: 0;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    .projects__filters {
+        font-size: 16px;
+        width: auto;
+    }
+
+    .projects__container {
+        display: block;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .projects__container {
+        max-width: unset;
+        height: 100%;
+        position: fixed;
+        top: 49px;
+        left: 0;
+        background-color: white;
+        z-index: 10;
+    }
+
+    .projects__animWrapper {
+        display: none;
+        transition: left 0.5s;
+        left: -100%;
+    }
+
+    .projects__animWrapper_active_true {
+        display: block;
+        left: 0;
+    }
+
+    .projects__animWrapper_active_false {
+        display: block;
+        left: -100%;
+    }
+
+    /*.projects__animWrapper_active_false:not(.projects__animWrapper_isTouched_true){*/
+    /*    display: none;*/
+    /*}*/
+    /*.projects__animWrapper_active_false:not(.projects__animWrapper_isTouched_false){*/
+    /*    animation: slideLeft 0.5s forwards;*/
+    /*}*/
+    /*@keyframes slideRight {*/
+    /*    from {*/
+    /*        left: -100%;*/
+    /*    }*/
+    /*    to{*/
+    /*        left: 0;*/
+    /*    }*/
+    /*}*/
+    /*@keyframes slideLeft {*/
+    /*    from {*/
+    /*        left: 0;*/
+    /*    }*/
+    /*    to{*/
+    /*        left: -100%;*/
+    /*        display: none;*/
+    /*    }*/
+    /*}*/
 }

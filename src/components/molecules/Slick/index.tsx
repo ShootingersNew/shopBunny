@@ -2,7 +2,10 @@ import React, {useEffect, useRef, useState} from "react";
 import './style.css'
 import Container from "../../atoms/Container";
 import Slider, {Settings} from "react-slick";
+import Subheader from "../Subheader";
 import Heading from "../../atoms/Heading";
+import {isMobileOnly} from "react-device-detect";
+import {useIframeRes} from "../../_settings/_utils";
 
 type SlidesTypes = {
     header: string,
@@ -26,26 +29,27 @@ const SlickSlider: React.FC<{ slides: SlidesTypes[] }> = ({slides}) => {
             setActiveSlider(newIndex);
         },
     };
+    const isMobile = useIframeRes() === 'mobile';
     const [activeSlider, setActiveSlider] = useState<number>(0);
     const [slideProgress, setSlideProgress] = useState<number>(0);
     const slider = useRef<Slider>(null);
     let timer: any;
-
-    const progressChangeSlides: () => void = () => {
-        const time = settings.autoplaySpeed as number / 100;
-        timer = setTimeout(() => {
-            let count = slideProgress + 1;
-            if (count <= 100) {
-                setSlideProgress(count);
-            } else {
-                slider?.current?.slickGoTo(activeSlider + 1)
-            }
-        }, time);
-    };
+    const dotWidth = isMobileOnly || isMobile ? `calc(${100 / slides.length}vw - 1px)` : `calc(100% / ${slides.length})`;
     useEffect(() => {
+        const progressChangeSlides: () => void = () => {
+            const time = settings.autoplaySpeed as number / 100;
+            timer = setTimeout(() => {
+                let count = slideProgress + 1;
+                if (count <= 100) {
+                    setSlideProgress(count);
+                } else {
+                    slider?.current?.slickGoTo(activeSlider + 1)
+                }
+            }, time);
+        };
         progressChangeSlides();
         return () => clearTimeout(timer);
-    }, [slideProgress, activeSlider, progressChangeSlides, timer]);
+    }, [slideProgress, activeSlider, timer]);
 
     function goTo(e: React.MouseEvent<HTMLDivElement>): void {
         const idx = Number((e.target as HTMLDivElement).getAttribute('data-slick'));
@@ -53,9 +57,8 @@ const SlickSlider: React.FC<{ slides: SlidesTypes[] }> = ({slides}) => {
     }
 
     return (
-        <section onClick={() => {
-            console.log(slideProgress)
-        }} className="slider">
+        <section className="slider">
+            <Subheader>Снижаем риски</Subheader>
             <Slider ref={slider} {...settings}>
                 {slides.map((item, idx) => {
                     return (
@@ -70,7 +73,7 @@ const SlickSlider: React.FC<{ slides: SlidesTypes[] }> = ({slides}) => {
                 })}
             </Slider>
             {/*делаю кастом дотс, чтобы не колдовать с базовым методом slick*/}
-            <Container>
+            <Container className={'slider__content-wrapper'}>
                 <div className="slider__content">
                     <div className="slider__info">
                         <Heading className={'slider__title'} type={3}>
@@ -94,7 +97,10 @@ const SlickSlider: React.FC<{ slides: SlidesTypes[] }> = ({slides}) => {
                                     onClick={(e) => {
                                         goTo(e)
                                     }}
-                                    style={{backgroundImage: 'url(' + item.back + ')'}}
+                                    style={{
+                                        backgroundImage: 'url(' + item.back + ')',
+                                        width: dotWidth
+                                    }}
                                 >
                                     {
                                         idx === activeSlider &&

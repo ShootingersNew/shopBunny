@@ -3,10 +3,46 @@
 .tag {
     cursor: pointer;
     display: inline-block;
+    position: relative;
+}
+
+.tag__text {
+    position: relative;
 }
 
 .tag input:checked ~ .tag__text {
     background: var(--brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.tag__mobileLink {
+    display: inline-block;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 20px;
+    background-color: var(--mobilebg);
+    font-size: 16px;
+    left: -28px;
+    top: -2px;
+}
+
+.tag__text:hover .filters__hover {
+    display: block;
+}
+
+@media all and (max-width: 600px) {
+    .tag {
+        display: block;
+    }
+
+    .tag input:checked ~ .tag__text {
+        color: black;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        background: unset;
+
+    }
 }

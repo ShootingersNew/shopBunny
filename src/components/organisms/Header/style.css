@@ -1,6 +1,11 @@
+@import "./../../_settings/_variables.css";
 .header {
     height: 100px;
     width: 100%;
+    position: sticky;
+    z-index: 11;
+    top: 0;
+    background-color: var(--background-color);
 }
 
 .header__container {
@@ -18,9 +23,28 @@
     display: none;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 1160px) {
+    .header {
+        font-size: 16px;
+    }
+
+    .header__nav {
+        margin-left: 0;
+    }
+}
+
+@media all and (max-width: 852px) {
     .header {
         height: 49px;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        background-color: white;
+        z-index: 11;
     }
 
     .header__nav {

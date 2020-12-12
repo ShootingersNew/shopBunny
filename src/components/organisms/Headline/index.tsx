@@ -6,7 +6,7 @@ import Container from "../../atoms/Container"
 //styles
 import './style.css'
 
-const Headline: React.FC<{ linkTo: number | undefined, img: string }> = ({linkTo, img}) => {
+const Headline: React.FC<{ linkTo: string, img: string }> = ({linkTo, img}) => {
     return (
         <div className={'headline'} style={{backgroundImage: `url(${img})`}}>
             <Container className={'headline__container'}>

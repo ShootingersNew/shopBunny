@@ -9,7 +9,7 @@ import {mask} from "../../_settings/_config"
 
 type InputTypes = {
     className?: string,
-    onChange?: (e: React.FormEvent) => void,
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
     value?: string,
     placeholder?: string,
     name: string,
@@ -54,8 +54,9 @@ const Input: React.FC<InputTypes> =
             break;
         case "radio":
             input =
-                <div className={inputClass + ' ' + className}>
+                <label className={inputClass + ' ' + className}>
                     <input
+                        onChange={onChange}
                         name={name}
                         type='radio'
                         className={'input__radio'}
@@ -65,11 +66,11 @@ const Input: React.FC<InputTypes> =
                         data-id={id}
                     />
                     {children}
-                </div>;
+                </label>;
             break;
         case "checkbox":
             input =
-                <div className={inputClass + ' ' + className}>
+                <label className={inputClass + ' ' + className}>
                     <input
                         onChange={onChange}
                         name={name}
@@ -81,7 +82,7 @@ const Input: React.FC<InputTypes> =
                         data-id={id}
                     />
                     {children}
-                </div>;
+                </label>;
             break;
         case "search":
             input =

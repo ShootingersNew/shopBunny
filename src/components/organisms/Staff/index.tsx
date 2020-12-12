@@ -9,6 +9,7 @@ const Staff: React.FC<compProps & RESTProps> = ({data}) => {
     return (
         <section className="staff">
             <Subheader>Ответственные за результат</Subheader>
+
             <ColumnsWrapper
                 items={data.items as StaffArrayType[]}
                 type={"staff"}

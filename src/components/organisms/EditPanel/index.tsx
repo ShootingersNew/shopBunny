@@ -9,7 +9,8 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
             category: string
         }
 
-        const [formValue, setFormValue] = useState<EditPanelStateTypes>({
+        const [formValue, setFormValue] = useState<any>({
+            id: 1,
             preview: "#",
             name: "Janosy",
             category: 'Blog',
@@ -22,12 +23,10 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
                 {
                     "title": "Компактный интернет-магазин",
                     "abbreviation": "Компакт. интернет-магазин",
-                    "link": "compactShop"
                 },
                 {
                     "title": "Фирменный стиль",
                     "abbreviation": "Фирм. стиль",
-                    "link": "firm"
                 }
             ]
         },);
@@ -43,19 +42,18 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
                 case 'tags':
                     let isInArr = false;
                     //проверяем, есть ли в массиве уже тэг с таким линком. Если он есть, то сразу отсеивается
-                    let newArr: LinkItemType[] = formValue.cardTags.filter((tag) => {
-                        console.log(tag);
-                        if (tag.link === id) {
+                    let newArr: LinkItemType[] = formValue.cardTags.filter((tag: any) => {
+                        if (tag.title === id) {
                             isInArr = true;
                         }
-                        return tag.link !== id
+                        return tag.title !== id
                     });
                     //если же его нет, то его нужно добавить
                     if (!isInArr) {
                         //берем из глобального массива тэгов тэг с таким линком
                         let newTagInArr = tags?.find((item) => {
-                            console.log('this is', item.link, id);
-                            return item.link === id
+                            console.log('this is', item.title, id);
+                            return item.title === id
                         });
                         //добавляем его в новый массив
                         newArr = [...newArr, newTagInArr as LinkItemType]
@@ -137,11 +135,11 @@ const EditPanel: React.FC<{ categories?: string[], types?: string[], tags?: Link
                                 let isActive = formValue.filterTags.includes(tag.title);
                                 return (
                                     <Tag
-                                        key={tag.link}
+                                        key={tag.title}
                                         type={"checkbox"}
                                         defaultChecked={isActive}
                                         name={'tags'}
-                                        link={tag.link}
+                                        link={tag.title}
                                         className={'editPanel__tag_isActive_' + isActive}
                                         changeHandler={(val) => {
                                         }}

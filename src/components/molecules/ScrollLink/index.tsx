@@ -9,7 +9,7 @@ import f from '../../atoms/montserratBold/style.module.css'
 interface ScrollLinkPropTypes {
     className?: string,
     children: string,
-    to: number | undefined
+    to: string
 }
 
 const ScrollLink: React.FC<ScrollLinkPropTypes> = ({children, className, to}) => {
@@ -18,20 +18,8 @@ const ScrollLink: React.FC<ScrollLinkPropTypes> = ({children, className, to}) =>
         [`${className}`]: className
 
     });
-    const clickHandler = () => {
-        scrollToRef(to)
-    };
-    const scrollToRef = (to: number | undefined): void => {
-        const BodySelector: HTMLBodyElement | null = document.querySelector('body');
-        if (BodySelector !== null) {
-            BodySelector.scrollTo({
-                top: to,
-                behavior: "smooth"
-            })
-        }
-    };
     return (
-        <a className={classNames + ' ' + s.mainColor + ' ' + f.montserratBold} onClick={clickHandler}>
+        <a href={to} className={classNames + ' ' + s.mainColor + ' ' + f.montserratBold}>
             {children}
         </a>
     )

@@ -5,7 +5,13 @@ import Tag from "../../atoms/Tag"
 import Card from "../../atoms/Card";
 import './style.css'
 
-const CardProduct: React.FC<{ item: ProductArrayType, onClick: (item: any) => void }> = ({item, onClick}) => {
+type CardProductPropTypes = {
+    link?: string,
+    item: ProductArrayType,
+    onClick: (item: any) => void
+}
+
+const CardProduct: React.FC<CardProductPropTypes> = ({item, onClick, link}) => {
     const getItem: () => void = () => {
         onClick(item)
     };
@@ -14,8 +20,9 @@ const CardProduct: React.FC<{ item: ProductArrayType, onClick: (item: any) => vo
             onClick={getItem}
             className={'cardProduct'}
             preview={
-                <div className="cardProduct__image"/>
+                <img className={'cardProduct__image'} src={item.preview} alt={item.name}/>
             }
+            link={link}
             content={
                 <div className="cardProduct__content">
                     <header className={'cardProduct__header'}>
@@ -27,9 +34,10 @@ const CardProduct: React.FC<{ item: ProductArrayType, onClick: (item: any) => vo
               </span>
                     </header>
                     <footer className={'cardProduct__footer'}>
+                        {console.log(item)}
                         {
-                            item.cardTags && (item.cardTags as LinkItemType[]).map((tag): JSX.Element => {
-                                return <Tag className={'cardProduct__tag'}>{tag.abbreviation}</Tag>
+                            item.cardTags && (item.cardTags as LinkItemType[]).map((tag, i): JSX.Element => {
+                                return <Tag key={i} className={'cardProduct__tag'}>{tag.abbreviation}</Tag>
                             })
                         }
                     </footer>

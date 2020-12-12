@@ -14,7 +14,7 @@ const getter = (url) => {
         })
 };
 
-export const api = {
+const api = {
     get(url) {
         return getter(url)
     },
@@ -29,3 +29,4 @@ export const api = {
             });
     }
 };
+export default api

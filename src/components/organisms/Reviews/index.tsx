@@ -1,45 +1,76 @@
-import React from "react"
+import React, {useEffect, useRef, useState} from "react"
 import Subheader from "../../molecules/Subheader"
 import CardReview from "../../molecules/CardReview"
+import Slider from "react-slick"
+import {isMobileOnly} from "react-device-detect"
 //styles
 import './style.css'
+import withRESTConnect, {RESTProps} from "../../hoc/withRestConnect";
+import {useIframeRes} from "../../_settings/_utils";
 
+const Reviews: React.FC<RESTProps> = ({data: {reviews}}) => {
+    const [height, setHeight] = useState<number>(596);
+    const [isClosed, setIsClosed] = useState(false);
+    const slider = useRef<Slider>(null);
+    useEffect(() => {
 
-const Reviews: React.FC = () => {
+    });
+    const clickHandler: (height: number) => void = (height) => {
+        setHeight(height);
+    };
+    const changeSlides = () => {
+        setIsClosed(true);
+        setTimeout(() => {
+            setIsClosed(false)
+        }, 300)
+    };
+    const isMobile = useIframeRes() === 'mobile';
+    const mapReviews: () => JSX.Element[] | undefined = () => {
+        return (
+            reviews && reviews.map((item, idx) => {
+                let type: "vertical" | undefined = undefined;
+                if (idx === 0) {
+                    type = 'vertical';
+                }
+                return (
+                    <CardReview
+                        className={'reviews__card'}
+                        type={type}
+                        img={item.preview}
+                        review={item.text}
+                        // @ts-ignore
+                        mark={item.mark}
+                        date={item.date}
+                        name={'Михаил'}
+                        isClosed={isClosed}
+                    />
+                )
+            })
+        )
+    };
     return (
         <section className="reviews">
             <Subheader>
                 Отзывы
             </Subheader>
-            <div className="reviews__content">
-                <CardReview
-                    className={'reviews__card'}
-                    type={"vertical"}
-                    img={''}
-                    review={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis in nisi faucibus ac. Massa fames enim, nisl aliquam. Pretium et congue urna pharetra est, fames mattis proin. Facilisis arcu sagittis, cras vivamus. Elit orci risus vitae cras aenean viverra ut convallis lacinia. Quam lectus augue tempus viverra viverra urna quam semper arcu. Vitae, nec tempus libero libero quam mauris, adipiscing fusce.'}
-                    mark={5}
-                    date={'19 сентября 2019'}
-                    name={'Михаил'}
-                />
-                <CardReview
-                    className={'reviews__card'}
-                    img={''}
-                    review={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis in nisi faucibus ac. Massa fames enim, nisl aliquam. Pretium et congue urna pharetra est, fames mattis proin. Facilisis arcu sagittis, cras vivamus. Elit orci risus vitae cras aenean viverra ut convallis lacinia. Quam lectus augue tempus viverra viverra urna quam semper arcu. Vitae, nec tempus libero libero quam mauris, adipiscing fusce.'}
-                    mark={4}
-                    date={'21 сентября 2019'}
-                    name={'heheheheh'}
-                />
-                <CardReview
-                    className={'reviews__card'}
-                    img={''}
-                    review={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis in nisi faucibus ac. Massa fames enim, nisl aliquam. Pretium et congue urna pharetra est, fames mattis proin. Facilisis arcu sagittis, cras vivamus. Elit orci risus vitae cras aenean viverra ut convallis lacinia. Quam lectus augue tempus viverra viverra urna quam semper arcu. Vitae, nec tempus libero libero quam mauris, adipiscing fusce.'}
-                    mark={4}
-                    date={'21 сентября 2019'}
-                    name={'heheheheh'}
-                />
-            </div>
+            {
+                !(isMobileOnly || isMobile) ?
+                    <div className="reviews__content">
+                        {
+                            mapReviews()
+                        }
+
+                    </div>
+                    :
+                    <Slider arrows={false} ref={slider} slidesToShow={1} beforeChange={changeSlides}>
+                        {
+                            mapReviews()
+                        }
+                    </Slider>
+            }
+            {/*    condition rendering end*/}
         </section>
 
     )
 };
-export default Reviews
+export default withRESTConnect<RESTProps>(Reviews)

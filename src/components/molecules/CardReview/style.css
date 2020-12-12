@@ -4,6 +4,10 @@
     width: 1019px;
 }
 
+.cardReview__open {
+    display: none;
+}
+
 .cardReview__image {
     height: 328px;
     width: 377px;
@@ -73,4 +77,115 @@
 
 .cardReview_vertical .cardReview__text {
     width: 94%;
+}
+
+.cardReview__open {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: red;
+}
+
+@media all and (max-width: 1600px) {
+    .cardReview {
+        display: block;
+    }
+
+    .cardReview__header {
+        display: block;
+    }
+
+    .cardReview__stars {
+        display: inline-block;
+        width: 98px;
+        height: 16px;
+    }
+
+    .cardReview__date {
+        display: inline-block;
+        margin: 0 0 0 16px;
+    }
+
+    .cardReview__name {
+        display: block;
+    }
+
+    .cardReview__content {
+        padding: 0;
+    }
+
+    .cardReview__image {
+        height: auto;
+        width: 100%;
+    }
+
+    .cardReview_vertical .cardReview__image {
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .cardReview_vertical {
+        width: 30%;
+    }
+
+    .cardReview {
+        width: 30%;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .cardReview_vertical .cardReview__text {
+        width: 97%;
+    }
+
+    .cardReview__text {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .cardReview__open {
+        display: block;
+    }
+
+    .cardReview__image {
+        width: 100%;
+        height: 74.3vw !important;
+        padding-bottom: 0 !important;
+    }
+
+    .cardReview {
+        width: 100%;
+        height: unset;
+        display: unset;
+
+    }
+
+    .cardReview__date {
+        margin: 0;
+    }
+
+    .cardReview__header {
+        display: block;
+    }
+
+    .cardReview__name {
+        display: block;
+    }
+
+    .cardReview__animWrapper {
+        height: 358px;
+        overflow: hidden;
+        transition: height 0.7s;
+    }
+
+    .cardReview__content {
+        transition: height 10s;
+        transition-delay: 10s;
+    }
+
+    .cardReview__content_opened_true {
+        height: auto;
+    }
 }

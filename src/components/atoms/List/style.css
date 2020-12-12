@@ -9,3 +9,27 @@
 .list__bullets {
     color: var(--grey-3);
 }
+
+@media all and (max-width: 1600px) {
+    .list__bullets {
+        position: absolute;
+    }
+
+    .list__content {
+        display: inline-block;
+    }
+
+    .list_type_bullets .list__content {
+        padding-left: 14px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .list__bullets {
+        position: absolute;
+    }
+
+    .list__content {
+        display: inline-block;
+    }
+}

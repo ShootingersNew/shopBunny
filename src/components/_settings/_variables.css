@@ -39,6 +39,23 @@
     --width-container: 1752px;
 }
 
+@media screen and (max-width: 1600px) {
+    :root {
+        --base-font-size: 18px;
+        --header-1-size: 4.95em;
+        --header-2-size: 3.1em;
+        --header-3-size: 2.17em;
+        --width-container: 1260px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    :root {
+        --base-font-size: 16px;
+
+    }
+}
+
 @media all and (max-width: 600px) {
     :root {
         --width-container: 240px;

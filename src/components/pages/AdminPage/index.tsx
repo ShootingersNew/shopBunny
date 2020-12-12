@@ -20,8 +20,19 @@ class AdminPage extends React.Component<RESTProps & compProps> {
         console.log(this.props)
     }
 
-    handleEditorChange = (content: any, editor: any) => {
+    handleEditorChange = (content: string, editor: any) => {
         console.log('Content was updated:', content);
+        var stringToHTML = function (str: string) {
+            var dom = document.createElement('div');
+            dom.innerHTML = str;
+            return dom;
+        };
+        const htmlArticle = stringToHTML(content);
+        const articleObj = {
+            _header: htmlArticle.getElementsByTagName('h2')[1]?.textContent,
+            _contents: htmlArticle.getElementsByTagName('ul')[0]
+        };
+        console.log(articleObj)
     };
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
@@ -65,95 +76,227 @@ class AdminPage extends React.Component<RESTProps & compProps> {
                                 ],
                                 templates: [
                                     {
-                                        title: 'Some title 2', description: 'Some desc 2', content: '\n' +
-                                            '<div class="wrapp">\n' +
-                                            '    <h2>Содержание</h2>\n' +
-                                            '    <ul>\n' +
-                                            '        <li>Заголовок</li>\n' +
-                                            '        <li>Заголовок</li>\n' +
-                                            '        <li>Заголовок</li>\n' +
-                                            '        <li>Заголовок</li>\n' +
-                                            '        <li>Заголовок</li>\n' +
-                                            '        <li>Заголовок</li>\n' +
-                                            '    </ul>\n' +
-                                            '    <h2>Заголовок</h2>\n' +
-                                            '    <p>\n' +
-                                            '        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
-                                            '        montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim non quis.\n' +
-                                            '        Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
-                                            '        Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
-                                            '        Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
-                                            '        tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
-                                            '        sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
-                                            '        quam odio sagittis proin sed ornare pulvinar commodo.\n' +
-                                            '    </p>\n' +
-                                            '    <p>\n' +
-                                            '        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
-                                            '        montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim non quis.\n' +
-                                            '        Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
-                                            '        Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
-                                            '        Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
-                                            '        tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
-                                            '        sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
-                                            '        quam odio sagittis proin sed ornare pulvinar commodo.\n' +
-                                            '    </p>\n' +
-                                            '    <p>\n' +
-                                            '        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
-                                            '        montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim non quis.\n' +
-                                            '        Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
-                                            '        Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
-                                            '        Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
-                                            '        tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
-                                            '        sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
-                                            '        quam odio sagittis proin sed ornare pulvinar commodo.\n' +
-                                            '    </p>\n' +
-                                            '</div>\n' +
-                                            '<div>\n' +
-                                            '    <img src="/images/banner.png" alt=""/>\n' +
-                                            '    <img src="/images/banner.png" alt=""/>\n' +
-                                            '    <img src="/images/banner.png" alt=""/>\n' +
-                                            '</div>\n' +
-                                            '<h2>Заголовок</h2>\n' +
-                                            '<p>\n' +
-                                            '    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
-                                            '    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim non quis.\n' +
-                                            '    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
-                                            '    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
-                                            '    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
-                                            '    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
-                                            '    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
-                                            '    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
-                                            '</p>\n' +
-                                            '<p>\n' +
-                                            '    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
-                                            '    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim non quis.\n' +
-                                            '    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
-                                            '    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
-                                            '    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
-                                            '    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
-                                            '    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
-                                            '    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
-                                            '</p>\n' +
-                                            '<p>\n' +
-                                            '    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
-                                            '    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim non quis.\n' +
-                                            '    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
-                                            '    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
-                                            '    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
-                                            '    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
-                                            '    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
-                                            '    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
-                                            '</p>\n' +
-                                            '<div>\n' +
-                                            '    <img src="/images/banner.png" alt=""/>\n' +
-                                            '    <img src="/images/banner.png" alt=""/>\n' +
-                                            '    <img src="/images/banner.png" alt=""/>\n' +
-                                            '</div>\n'
+                                        title: 'Some title 2',
+                                        description: 'Some desc 2',
+                                        content: '   <div className="article__mainImage" style={{backgroundImage: \'url("/images/banner.png")\'}}/>\n' +
+                                            '            <div className="container container_alt">\n' +
+                                            '                <h2>Содержание</h2>\n' +
+                                            '                <ul>\n' +
+                                            '                    <li>Заголовок</li>\n' +
+                                            '                    <li>Заголовок</li>\n' +
+                                            '                    <li>Заголовок</li>\n' +
+                                            '                    <li>Заголовок</li>\n' +
+                                            '                    <li>Заголовок</li>\n' +
+                                            '                    <li>Заголовок</li>\n' +
+                                            '                </ul>\n' +
+                                            '                <h2>Заголовок</h2>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'article__container\'}>\n' +
+                                            '                <img className={\'img_left\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'container_alt\'}>\n' +
+                                            '                <h2>Заголовок</h2>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'article__container\'}>\n' +
+                                            '                <img className={\'img_left\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'container_alt\'}>\n' +
+                                            '                <h2>Заголовок</h2>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'article__container\'}>\n' +
+                                            '                <img className={\'img_left\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'container_alt\'}>\n' +
+                                            '                <h2>Заголовок</h2>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'article__container\'}>\n' +
+                                            '                <img className={\'img_left\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'container_alt\'}>\n' +
+                                            '                <h2>Заголовок</h2>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '                <p>\n' +
+                                            '                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur\n' +
+                                            '                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim\n' +
+                                            '                    non quis.\n' +
+                                            '                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.\n' +
+                                            '                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.\n' +
+                                            '                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet\n' +
+                                            '                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus\n' +
+                                            '                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum\n' +
+                                            '                    quam odio sagittis proin sed ornare pulvinar commodo.\n' +
+                                            '                </p>\n' +
+                                            '            </div>\n' +
+                                            '            <div className={\'article__container\'}>\n' +
+                                            '                <img className={\'img_left\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '                <img className={\'img_right\'} src="/images/banner.png" alt=""/>\n' +
+                                            '            </div>'
                                     }
                                 ]
 
                             }}
-
                             onEditorChange={this.handleEditorChange}
                         />
                     </Route>

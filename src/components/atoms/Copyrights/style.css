@@ -3,3 +3,20 @@
 .copyrights__greyText {
     color: var(--grey-3);
 }
+
+@media all and (max-width: 600px) {
+    .copyrights__text {
+        display: block;
+    }
+
+    .copyrights__separator {
+        display: none;
+    }
+
+    .copyrights {
+        margin: 15px 0;
+        padding: 29px 0 32px;
+        background-color: white;
+        line-height: 172.5%;
+    }
+}

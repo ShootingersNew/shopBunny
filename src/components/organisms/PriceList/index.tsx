@@ -8,7 +8,8 @@ import './style.css'
 
 import {PriceArrayType} from "../../../tsTypes"
 
-const PriceList: React.FC<RESTProps & compProps & { scrollTo: number | undefined }> = ({scrollTo, data}) => {
+const PriceList: React.FC<RESTProps & compProps> = ({data}) => {
+
     return (
         <section className="priceList">
             <Subheader>Стоимость и сроки</Subheader>
@@ -16,9 +17,10 @@ const PriceList: React.FC<RESTProps & compProps & { scrollTo: number | undefined
                 items={data.items as PriceArrayType[]}
                 type={'price'}
                 card={(item) => (
-                    <CardPrice className={'priceList__card'} scrollTo={scrollTo} {...item as PriceArrayType}/>)}
+                    <CardPrice className={'priceList__card'} item={item as PriceArrayType}/>
+                )}
             />
         </section>
     )
 };
-export default withRESTConnect(PriceList)
+export default withRESTConnect<RESTProps & compProps>(PriceList)

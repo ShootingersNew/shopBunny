@@ -1,6 +1,7 @@
-.logo {
+.logo__link {
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .logo__img-container {
@@ -21,11 +22,7 @@
     font-size: 21px;
 }
 
-@media all and (max-width: 600px) {
-    .logo__link {
-        height: 100%;
-        display: flex;
-    }
+@media all and (max-width: 852px) {
 
     .logo__img-container {
         height: 49px;

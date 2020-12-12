@@ -1,102 +1,72 @@
-import React from "react"
+import React, {useEffect} from "react"
+import withRESTConnect, {RESTProps} from "../../hoc/withRestConnect";
+import {ItemIdTypes} from "../../../tsTypes";
+import {useHistory, useParams} from 'react-router-dom'
 import './style.css'
+import Container from "../../atoms/Container";
+import WebViewer from "../WebViewer";
 
-const Article: React.FC<{ id: number }> = ({id}) => {
+type ArticlePropTypes = {
+    getId: (p: ItemIdTypes) => void,
+    catalogPagePath: string,
+    curId: string | number
+}
+const Article: React.FC<RESTProps & ArticlePropTypes> = ({getId, data: {item}, catalogPagePath, curId}) => {
+    const {id} = useParams();
+    const type = catalogPagePath.substring(1);
+    //pass id to mother element
+    useEffect(() => {
+        getId({type: catalogPagePath.substring(1), id: Number(id)});
+    }, [id, getId, catalogPagePath]);
     return (
-        <article className={'article'}>
-            <div className="article__mainImage" style={{backgroundImage: 'url("/images/banner.png")'}}/>
-            <div className="container container_alt">
-                <h2>Содержание</h2>
-                <ul>
-                    <li>Заголовок</li>
-                    <li>Заголовок</li>
-                    <li>Заголовок</li>
-                    <li>Заголовок</li>
-                    <li>Заголовок</li>
-                    <li>Заголовок</li>
-                </ul>
-                <h2>Заголовок</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim
-                    non quis.
-                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.
-                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.
-                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet
-                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus
-                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum
-                    quam odio sagittis proin sed ornare pulvinar commodo.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim
-                    non quis.
-                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.
-                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.
-                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet
-                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus
-                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum
-                    quam odio sagittis proin sed ornare pulvinar commodo.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim
-                    non quis.
-                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.
-                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.
-                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet
-                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus
-                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum
-                    quam odio sagittis proin sed ornare pulvinar commodo.
-                </p>
-            </div>
-            <div className={'article__container'}>
-                <img className={'img_left'} src="/images/banner.png" alt=""/>
-                <img className={'img_right'} src="/images/banner.png" alt=""/>
-                <img className={'img_right'} src="/images/banner.png" alt=""/>
-            </div>
-            <div className={'container_alt'}>
-                <h2>Заголовок</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim
-                    non quis.
-                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.
-                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.
-                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet
-                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus
-                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum
-                    quam odio sagittis proin sed ornare pulvinar commodo.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim
-                    non quis.
-                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.
-                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.
-                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet
-                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus
-                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum
-                    quam odio sagittis proin sed ornare pulvinar commodo.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                    montes, eu ut massa, sed. Et, eu elit auctor sed leo. Nullam malesuada in molestie vulputate enim
-                    non quis.
-                    Gravida phasellus massa turpis elit consequat turpis aliquam. Et massa aliquam et a.
-                    Mus interdum at vitae nisl amet, vel. Sit facilisi volutpat, in vestibulum, cras.
-                    Cras scelerisque morbi nullam viverra phasellus donec erat. Id suspendisse amet laoreet
-                    tempus blandit quis feugiat hendrerit velit. Mi, ut condimentum eget feugiat. Velit lacus
-                    sit ut vel et consequat sed. Dui, elementum mattis eget in tristique morbi faucibus. Vestibulum
-                    quam odio sagittis proin sed ornare pulvinar commodo.
-                </p>
-            </div>
-            <div className={'article__container'}>
-                <img className={'img_left'} src="/images/banner.png" alt=""/>
-                <img className={'img_right'} src="/images/banner.png" alt=""/>
-                <img className={'img_right'} src="/images/banner.png" alt=""/>
-            </div>
-        </article>
+        <>
+            {
+                type === 'portfolio' ?
+                    <>
+                        <WebViewer url={item.url} sizes={item.sizes}/>
+                    </>
+                    :
+                    <>
+                        {
+                            item !== null ?
+                                <article className={'article'}>
+                                    <div className="article__mainImage"
+                                         style={{backgroundImage: 'url("/images/banner.png")'}}/>
+                                    <div className="container container_alt">
+                                        <h2>Содержание</h2>
+                                        <ul>
+                                            {
+                                                item && item.contents && item.contents.map((li: string) => {
+                                                    return (
+                                                        <li><a href={'#a1'}>{li}</a></li>
+                                                    )
+                                                })
+                                            }
+                                        </ul>
+                                        <div dangerouslySetInnerHTML={{__html: item && item.html}}/>
+                                    </div>
+                                </article>
+                                :
+                                <>
+                                    <Redirector id={id} item={item} catalogPagePath={catalogPagePath}/>
+                                </>
+                        }
+                    </>
+            }
+        </>
     )
 };
-export default Article
+const Redirector: React.FC<{ item: object, id: number, catalogPagePath: string }> = ({item, catalogPagePath}) => {
+    const history = useHistory();
+    useEffect(() => {
+        setTimeout(() => (history.push(catalogPagePath)), 3000);
+    }, [history, catalogPagePath]);
+    return (
+        <>
+            {
+                <Container>Запись, вероятно, не существует. Вы будете направлены на страницу каталога</Container>
+            }
+        </>
+    )
+};
+export default withRESTConnect<RESTProps & ArticlePropTypes>(Article)

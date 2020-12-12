@@ -1,5 +1,5 @@
 .breadcrumbs__link {
-    color: #8C8C8C;
+    color: black;
     text-decoration: none;
 }
 
@@ -12,10 +12,16 @@
 
 
 .breadcrumbs__active {
-    color: #C8C8C8;
+    color: #8C8C8C;
     text-decoration: none;
 }
 
 .breadcrumbs {
     display: flex;
+}
+
+@media all and (max-width: 600px) {
+    .breadcrumbs {
+        display: none;
+    }
 }

@@ -22,7 +22,9 @@ const Subheader: React.FC<SubheaderPropTypes> = ({content, children, className})
                 {
                     content &&
                     <div className="subheader__content">
-                        {content}
+                        <Container className="container_mobile">
+                            {content}
+                        </Container>
                     </div>
                 }
             </Container>

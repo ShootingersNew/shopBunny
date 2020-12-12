@@ -2,6 +2,7 @@ import React from "react"
 //styles
 import cn from 'classnames'
 import './style.css'
+import {Link} from "react-router-dom";
 //types
 type ListPropTypes = {
     list: ListObjKeys[] | string[],
@@ -21,7 +22,8 @@ const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName, 
     });
     let listItemClassNames = cn({
         'list__item': true,
-        [`${listItemClassName}`]: listItemClassName
+        [`${listItemClassName}`]: listItemClassName,
+        [`list_type_${type}`]: type
     });
 
     let mapItem: (item: ListObjKeys | string, idx: number) => JSX.Element;
@@ -29,9 +31,9 @@ const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName, 
         if (typeof item !== "string") {
             return (
                 <li className={listItemClassNames} key={idx}>
-                    <a className={'list__link'} href={`${item.link}`}>
+                    <Link className={'list__link'} to={`${item.link}`}>
                         {item.title}
-                    </a>
+                    </Link>
                 </li>
             )
         } else {
@@ -40,7 +42,7 @@ const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName, 
                     {
                         type === 'bullets' && <span className={'list__bullets'}>+ </span>
                     }
-                    {item}
+                    <span className="list__content">  {item}</span>
                 </li>
 
             )
@@ -50,7 +52,7 @@ const List: React.FC<ListPropTypes> = ({list, listClassName, listItemClassName, 
 
     return <ul className={listClassNames}>
         {
-            (list as any[]).map((item, idx): JSX.Element => (
+            list && (list as any[]).map((item, idx): JSX.Element => (
                 mapItem(item, idx)
             ))
         }

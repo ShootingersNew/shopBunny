@@ -1,27 +1,43 @@
 export type LinkItemType = {
     title: string,
-    link?: string,
-    abbreviation?: string
+    abbreviation?: string,
+    link?: string
 }
 
 export type ProductArrayType = {
+    id: number,
     preview: string,
     name: string,
     type: string,
-    cardTags: LinkItemType[],
-    filterTags: string[]
+    cardTags: LinkItemType[]
 }
 export type StaffArrayType = {
     preview: string,
     name: string,
     post: string
 }
-export type InfoArrayType = {
+
+export interface ItemIdTypes {
+    type: string,
+    id: number | string
+}
+
+export interface InfoArrayType {
+    preview: string,
     title: string,
-    price: string,
-    shortDesc: string,
-    definition: string,
-    purpose: string[]
+    subTitle: string,
+    type: string,
+    list: string[],
+    slug: string
+}
+
+export type ReviewsArrayType = {
+    name: string,
+    date: string,
+    text: string,
+    preview: string,
+    mark: number,
+    link: string
 }
 export type PriceArrayType = {
     preview: string

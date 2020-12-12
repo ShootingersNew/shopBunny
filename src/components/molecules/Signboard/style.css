@@ -11,6 +11,20 @@
     margin-top: 9px;
     display: inline-block;
 }
+
+@media all and (max-width: 1600px) {
+    .signboard {
+        height: auto;
+        width: 302px;
+        padding: 29px 40px 29px;
+        box-sizing: border-box;
+    }
+
+    .signboard__list {
+        line-height: 1.6111;
+    }
+}
+
 @media all and (max-width: 600px) {
     .signboard {
         width: 100%;

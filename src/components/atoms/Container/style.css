@@ -4,24 +4,49 @@
     margin: 0 auto;
     width: 100%;
     max-width: var(--width-container);
+    /*padding: 0 10px;*/
+    box-sizing: border-box;
 }
 
 .container_mobile {
     max-width: none;
     width: auto;
     margin: 0;
+    padding: 0;
+}
+
+.container_alt {
+    max-width: 885px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media all and (max-width: 1260px) and (min-width: 600px) {
+    .container:not(.container_mobile) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 @media all and (max-width: 600px) {
     .container_mobile {
         margin: 0 auto;
         width: 100%;
-    }
-
-    .container {
+        max-width: var(--width-container);
     }
 
     .container_desktop {
         max-width: unset;
+    }
+
+    .container_alt {
+        max-width: var(--width-container);
+    }
+}
+
+@media all and (max-width: 260px) {
+    .container:not(.container_mobile) {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }

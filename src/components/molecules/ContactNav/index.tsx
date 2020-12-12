@@ -6,7 +6,8 @@ import TelephoneLink from "../../atoms/TelephoneLink"
 import './style.css'
 import st from './../../atoms/montserratBold/style.module.css'
 
-const ContactNav: React.FC<{ telephone: string, scrollTo: number | undefined }> = ({telephone, scrollTo}) => {
+const ContactNav: React.FC<{ telephone: string, scrollTo: string }> = ({telephone, scrollTo}) => {
+
     return (
         <div className={`header__contact-us contactNav ${st.montserratBold}`}>
             <TelephoneLink className={'contactNav__link'}>

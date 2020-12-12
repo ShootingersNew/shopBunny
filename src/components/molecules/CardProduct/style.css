@@ -30,6 +30,42 @@
     color: #C4C4C4;
 }
 
+@media all and (max-width: 1600px) {
+    .cardProduct {
+        width: 31.1%;
+        height: 312px;
+    }
+
+    .cardProduct__image {
+        height: 16.6vw;
+    }
+
+    .cardProduct__footer {
+        line-height: 25px;
+    }
+
+    .cardProduct__content {
+        padding-top: 0;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .cardProduct {
+        height: auto;
+    }
+
+    .cardProduct__type {
+
+        display: block;
+        margin-left: 0;
+    }
+
+    .cardProduct__tag {
+        font-size: 14px;
+        margin-right: 0;
+    }
+}
+
 @media all and (max-width: 600px) {
     .cardProduct {
         width: 100%;
